@@ -1,0 +1,284 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  overflow: hidden;
+
+  font-family: Roboto, sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.5;
+
+  background: #fff;
+}
+
+body,
+#root,
+#root > div {
+  height: 100vh;
+}
+
+#root > div {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* Дефолтные стили для размера xs иконки в кнопке */
+.Button > .icons--Icon_size_xs {
+  --icon-size: 1.5rem;
+}
+
+.SelectDropdown,
+.Modal,
+.DatePickerDropdown,
+.Sidebar {
+  /* z-index изменен чтобы select из @consta/ui не пересекался с фильтрами из antd таблицы */
+  z-index: 100;
+}
+
+/* удаление обводки элементов табов */
+.Tabs-Tab
+  > .ListItem.Text.ListItem.TabsTab:not(
+    .Text.ListItem.TabsTab_renderInDropdown
+  ).Text.ListItem.TabsTab::before {
+  display: none;
+}
+
+/* удаление обводки */
+.Popover:focus-visible,
+.ListItem:focus-visible {
+  outline: none;
+}
+
+#graph-container .tooltip {
+  /* stylelint-disable-next-line declaration-no-important --- Переопределение стилей tooltip на графе */
+  background-color: rgb(34 39 43 / 96%) !important;
+  box-shadow:
+    0 0.4rem 0.4rem 0 rgb(0 0 0 / 8%),
+    /* stylelint-disable-next-line declaration-no-important --- Переопределение стилей tooltip на графе */
+      0 0.8rem 2.4rem 0 rgb(0 0 0 / 32%) !important;
+}
+
+.ant-table-footer {
+  /* stylelint-disable-next-line declaration-no-important --- Хак для отключения падинга на футере таблицы antd (нельзя убрать через стили таблицы) */
+  padding: 1rem 0 !important;
+  /* stylelint-disable-next-line declaration-no-important  --- Хак для отключения радиуса на футере таблицы antd (нельзя убрать через стили таблицы) */
+  border-radius: 0 !important;
+}
+
+/* Стиль для столбца antd с сортировкой */
+.columnSorter :global(.ant-table-column-sorters) :global(.ant-table-column-sorter) {
+  opacity: 0;
+}
+
+/* Скрытие иконки сортировки если она не активна */
+.columnSorter[aria-sort='ascending'],
+.columnSorter[aria-sort='descending'] {
+  :global(.ant-table-column-sorters) :global(.ant-table-column-sorter) {
+    opacity: 1;
+  }
+}
+
+.columnSorter:hover :global(.ant-table-column-sorters) :global(.ant-table-column-sorter) {
+  opacity: 1;
+}
+
+/* Глобальные стили */
+.loaderFullContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+}
+
+.iconBg-xs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 1.6rem;
+  height: 1.6rem;
+
+  border-radius: 50%;
+}
+
+.m-t-2xs {
+  margin-top: var(--space-2xs);
+}
+
+.m-t-xs {
+  margin-top: var(--space-xs);
+}
+
+.m-t-s {
+  margin-top: var(--space-s);
+}
+
+.m-t-m {
+  margin-top: var(--space-m);
+}
+
+.m-t-2m {
+  margin-top: var(--space-2m);
+}
+
+.m-l-xs {
+  margin-left: var(--space-xs);
+}
+
+.m-l-2xs {
+  margin-left: var(--space-2xs);
+}
+
+.m-l-s {
+  margin-left: var(--space-s);
+}
+
+.m-l-m {
+  margin-left: var(--space-m);
+}
+
+.m-l-2xl {
+  margin-left: var(--space-2xl);
+}
+
+.m-r-2xl {
+  margin-right: var(--space-2xl);
+}
+
+.m-r-m {
+  margin-right: var(--space-m);
+}
+
+.m-r-xs {
+  margin-right: var(--space-xs);
+}
+
+.m-r-2xs {
+  margin-right: var(--space-2xs);
+}
+
+.m-r-s {
+  margin-right: var(--space-s);
+}
+
+.m-b-3xs {
+  margin-bottom: var(--space-3xs);
+}
+
+.m-b-2xs {
+  margin-bottom: var(--space-2xs);
+}
+
+.m-b-xs {
+  margin-bottom: var(--space-xs);
+}
+
+.m-b-m {
+  margin-bottom: var(--space-m);
+}
+
+.m-b-s {
+  margin-bottom: var(--space-s);
+}
+
+.flex-row {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-end {
+  align-items: end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+.full-height {
+  height: 100%;
+}
+
+.full-weight {
+  width: 100%;
+}
+
+.Steps-List {
+  padding-bottom: var(--space-3xs);
+}
+
+.word-break {
+  word-break: break-word;
+}
+
+.cellRight {
+  justify-content: end;
+}
+
+.textOverflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+}
+
+.gap-xs {
+  gap: var(--space-xs);
+}
+
+.gap-m {
+  gap: var(--space-m);
+}
+
+:root {
+  /* подключенные переменные из @consta - https://consta.design/libs/uikit/components-theme-stable/dev */
+  --space-3xs: 0.2rem;
+  --space-2xs: 0.4rem;
+  --space-xs: 0.8rem;
+  --space-2s: 1.4rem;
+  --space-m: 1.6rem;
+  --space-2m: 1.8rem;
+  --space-2l: 2.2rem;
+  --space-xl: 2.4rem;
+  --color-bg-alert: #eb5757;
+  --color-bg-link: #0078d2;
+  --color-bg-normal: #56b9f2;
+  --color-bg-default: #fff;
+  --color-bg-border: #00416633;
+  --color-typo-alert: #eb3333;
+  --color-typo-success: #09b37b;
+  --color-typo-system: #97b2c4;
+  --border-color: #dee4e8;
+  --bg-color: #ecf1f4;
+  --color-control-typo-ghost: #00426912;
+  --toolbar-height-s: 4.5rem;
+  --toolbar-height-l: 6rem;
+  --toolbar-height-xl: 6.4rem;
+}
