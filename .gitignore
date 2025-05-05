@@ -18,6 +18,7 @@ build
 # Dependency directories
 node_modules
 .idea
+.cache
 
 # Optional npm cache directory
 .npm

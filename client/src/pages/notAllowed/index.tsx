@@ -4,7 +4,7 @@ import { Button } from '@consta/uikit/Button'
 import { Layout } from '@consta/uikit/Layout'
 import { Responses403 } from '@consta/uikit/Responses403'
 
-export const Page = ({ errorMessage }: { errorMessage?: string }) => {
+export const IndexPage = ({ errorMessage }: { errorMessage?: string }) => {
   const navigate = useNavigate()
 
   const goBack = () => {

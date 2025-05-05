@@ -48,7 +48,7 @@ export default [
         version: 'detect',
       },
 
-      'import/extensions': ['.js', '.jsx', '.ts', '.tsx'],
+      'import/extensions': ['.js', '.jsx', '.ts', '.tsx', '.json'],
 
       'import/resolver': {
         node: true,
@@ -182,7 +182,12 @@ export default [
       'react-hooks/exhaustive-deps': ['warn'],
 
       'import/consistent-type-specifier-style': ['error', 'prefer-top-level'],
-      'import/extensions': 'error',
+      'import/extensions': [
+        'error',
+        {
+          json: 'always',
+        },
+      ],
       'import/no-mutable-exports': 'error',
       'import/no-webpack-loader-syntax': 'error',
 

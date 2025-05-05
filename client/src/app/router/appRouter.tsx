@@ -1,6 +1,7 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 
+import { MainPage } from '@pages/main'
 import { NotFoundPage } from '@pages/notFound'
 import { PATHS } from '@shared/constants'
 import type { TRouteObjectWithMeta } from '@shared/types'
@@ -15,7 +16,7 @@ export const routes: TRouteObjectWithMeta[] = [
     children: [
       {
         index: true,
-        element: <div>test</div>,
+        element: <MainPage />,
       },
     ],
   },

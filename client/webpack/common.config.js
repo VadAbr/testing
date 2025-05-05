@@ -67,7 +67,7 @@ module.exports = {
   },
   // Modules resolved
   resolve: {
-    extensions: ['.tsx', '.ts', '.js', 'jsx'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx', '.json'],
     alias: {
       '@app': APP_DIR,
       '@pages': PAGES_DIR,

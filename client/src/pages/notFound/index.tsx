@@ -4,7 +4,7 @@ import { Button } from '@consta/uikit/Button'
 import { Layout } from '@consta/uikit/Layout'
 import { Responses404 } from '@consta/uikit/Responses404'
 
-export const Page = () => {
+export const NotFoundPage = () => {
   const navigate = useNavigate()
 
   const goBack = () => {

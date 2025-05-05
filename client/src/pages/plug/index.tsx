@@ -8,7 +8,7 @@ const reloadPage = () => {
   window.location.reload()
 }
 
-export const Page = () => (
+export const PagePage = () => (
   <Layout style={{ height: '100%' }}>
     <Responses503
       size="m"
