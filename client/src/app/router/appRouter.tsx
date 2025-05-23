@@ -1,8 +1,11 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 
+import { InfoPage } from '@pages/info'
 import { MainPage } from '@pages/main'
 import { NotFoundPage } from '@pages/notFound'
+import { TestPage } from '@pages/test'
+import { TestResultsPage } from '@pages/testResults'
 import { PATHS } from '@shared/constants'
 import type { TRouteObjectWithMeta } from '@shared/types'
 
@@ -17,6 +20,24 @@ export const routes: TRouteObjectWithMeta[] = [
       {
         index: true,
         element: <MainPage />,
+        handle: {
+          noWrapper: true,
+        },
+      },
+      {
+        path: PATHS.info,
+        element: <InfoPage />,
+        handle: {
+          noWrapper: true,
+        },
+      },
+      {
+        path: PATHS.test,
+        element: <TestPage />,
+      },
+      {
+        path: PATHS.testResult,
+        element: <TestResultsPage />,
       },
     ],
   },

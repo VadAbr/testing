@@ -1,0 +1,22 @@
+.header {
+    border-bottom: 0.1rem solid var(--color-bg-border);
+}
+
+.toolbarWrapper{
+    max-width: var(--content-width-normal);
+    margin: 0 auto;
+}
+
+.toolbar {
+    border-bottom: none;
+}
+
+.right {
+    display: flex;
+    gap: var(--space-m);
+    align-items: center;
+}
+
+.menu :global(.Tabs-List){
+    height: 7rem;
+}

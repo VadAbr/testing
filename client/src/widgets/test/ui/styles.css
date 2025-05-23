@@ -1,0 +1,18 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.questions {
+    overflow: auto;
+    flex: 1 1 0;
+
+    width: 100%;
+    min-height: 0;
+    padding: var(--space-xl);
+}
+
+.questions > *:not(:last-child) {
+    margin-bottom: var(--space-m);
+}

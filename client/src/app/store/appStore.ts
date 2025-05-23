@@ -9,7 +9,8 @@ import { rootReducer } from './rootReducer'
 function createStore() {
   const store = configureStore({
     reducer: rootReducer,
-    middleware: getDefaultMiddleware => getDefaultMiddleware().concat([apiSlice.middleware]),
+    middleware: getDefaultMiddleware =>
+      getDefaultMiddleware({ serializableCheck: false }).concat([apiSlice.middleware]),
   })
 
   setupListeners(store.dispatch)

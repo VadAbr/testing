@@ -1,0 +1,35 @@
+.container {
+    width: 90rem;
+    max-width: 90rem;
+    padding: 5rem;
+    background-color: white;
+}
+
+.form {
+    margin-top: 2.5rem;
+}
+
+.form > *:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+.row {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-end;
+}
+
+.footer {
+    align-items: center;
+    justify-content: space-between;
+}
+
+@media screen and (width <= 900px) {
+    .row {
+        flex-direction: column;
+    }
+
+    .footer {
+        flex-direction: row;
+    }
+}

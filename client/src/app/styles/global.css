@@ -34,6 +34,10 @@ a {
   --icon-size: 1.5rem;
 }
 
+.RadioGroup_direction_row .RadioGroup-Item:not(:last-child) {
+  margin-right: var(--space-m);
+}
+
 .SelectDropdown,
 .Modal,
 .DatePickerDropdown,
@@ -281,4 +285,5 @@ a {
   --toolbar-height-s: 4.5rem;
   --toolbar-height-l: 6rem;
   --toolbar-height-xl: 6.4rem;
+  --content-width-normal: 140rem;
 }

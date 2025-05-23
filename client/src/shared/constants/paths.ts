@@ -2,7 +2,8 @@ export const PATHS = {
   root: '/',
   other: '*',
   test: '/test',
-  video: '/video',
+  videos: '/videos',
   info: '/info',
   adminPanel: '/adminPanel',
+  testResult: '/testResult',
 } as const

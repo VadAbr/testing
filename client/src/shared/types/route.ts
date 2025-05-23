@@ -8,6 +8,7 @@ type TRouteMeta = {
   label?: string
   /** Страница администратора */
   isAdminRoute?: boolean
+  noWrapper?: boolean
 }
 
 interface IndexRouteObject extends OldIndexRouteObject {
