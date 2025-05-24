@@ -4,10 +4,8 @@ import { useSelector } from 'react-redux'
 import type { IconComponent } from '@consta/icons/Icon'
 import { IconCommentDeleteFilled } from '@consta/icons/IconCommentDeleteFilled'
 import { IconLineAndBarChart } from '@consta/icons/IconLineAndBarChart'
-import { IconRestart } from '@consta/icons/IconRestart'
 import { IconTeam } from '@consta/icons/IconTeam'
 import { IconWarning } from '@consta/icons/IconWarning'
-import { Button } from '@consta/uikit/Button'
 import { Text } from '@consta/uikit/Text'
 
 import { TestSlice } from '@widgets/test'
@@ -32,7 +30,9 @@ export const Problems = () => {
     <div className={styles.cool}>
       <IconWarning size="l" view="warning" className={styles.icon} />
 
-      <Text size="l">{t('testResults.somethingBadText')}</Text>
+      <Text weight="semibold" size="l">
+        {t('testResults.somethingBadText')}
+      </Text>
 
       <div className={styles.problemsContainer}>
         {failedSteps.map((el, i) => {
@@ -65,20 +65,20 @@ const Problem = ({ step, categories }: Props) => {
 
   return (
     <div className={styles.problem}>
-      <div className={styles.problemTitle}>
-        <Icon view="warning" className={styles.icon} />
+      <Icon view="warning" className={styles.icon} />
+
+      <div className={styles.problemText}>
         <Text weight="medium" size="l">
           {t(`testResults.${step}`)}
         </Text>
+        <ul className={styles.categories}>
+          {categories.map((el, i) => (
+            <li key={i}>
+              <Text size="m">{t(`testResults.problems.${el}`)}</Text>
+            </li>
+          ))}
+        </ul>
       </div>
-
-      <ul className={styles.categories}>
-        {categories.map((el, i) => (
-          <li key={i}>
-            <Text size="m">{t(`testResults.problems.${el}`)}</Text>
-          </li>
-        ))}
-      </ul>
     </div>
   )
 }

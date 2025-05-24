@@ -38,10 +38,15 @@
     justify-content: space-between;
 
     width: 100%;
+    margin: 2rem 0;
 }
 
 .problem {
+    display: flex;
     flex: 1 1 auto;
+    gap: 2rem;
+    align-items: flex-start;
+    justify-content: center;
 }
 
 .problemTitle {
@@ -49,6 +54,12 @@
     gap: 2rem;
     align-items: center;
     justify-content: center;
+}
+
+.problemText {
+    & > *:first-child {
+        margin-top: 1rem;
+    }
 }
 
 .categories {
@@ -60,6 +71,19 @@
     margin-bottom: 0.5rem;
 }
 
-@media (max-width: 1200px) {
-    .problemsContainer {}
+@media (width <= 915px) {
+    .problemsContainer{
+        flex-flow: column nowrap;
+        gap: 4rem;
+    }
+
+    .problem {
+        flex-direction: column;
+        gap: 0;
+        align-items: center;
+    }
+
+    .problemText {
+        margin-top: 1rem;
+    }
 }
