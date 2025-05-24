@@ -59,6 +59,10 @@ export const TestSlice = createSlice({
         Object.assign(question, action.payload)
       }
     },
+    resetTest: state => {
+      state.testResults = initialState.testResults
+      state.questions = shuffleArray(initialState.questions)
+    },
   },
   selectors: {
     isFirstStep: state => state.activeStep.label === STEPS[0].label,

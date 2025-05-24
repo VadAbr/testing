@@ -1,7 +1,9 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
+import { IconEdit } from '@consta/icons/IconEdit'
 import { IconLineAndBarChart } from '@consta/icons/IconLineAndBarChart'
+import { IconSearchStroked } from '@consta/icons/IconSearchStroked'
 import { Button } from '@consta/uikit/Button'
 import { Text } from '@consta/uikit/Text'
 
@@ -45,9 +47,15 @@ export const MainPage = () => {
         </Text>
 
         <div className={styles.btns}>
-          <Button size="l" label={t('mainPageContent.goToInfo1')} onClick={openInfo} />
+          <Button
+            iconLeft={IconSearchStroked}
+            size="l"
+            label={t('mainPageContent.goToInfo1')}
+            onClick={openInfo}
+          />
 
           <Button
+            iconLeft={IconEdit}
             size="l"
             view="secondary"
             label={t('mainPageContent.goToTest1')}

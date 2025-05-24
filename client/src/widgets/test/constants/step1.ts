@@ -16,12 +16,6 @@ const createBaseOptions = (yes = 2, partial = 0, no = -2) => [
 export const Questions_STEP_1: QuestionItem[] = [
   {
     id: generateId(),
-    text: `${labelPrefix}1`,
-    type: 'text',
-    valueType: 'number',
-  },
-  {
-    id: generateId(),
     text: `${labelPrefix}2`,
     weight: 0,
     problemType: 'goalSetting',

@@ -2,6 +2,8 @@ import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { IconCommentDeleteFilled } from '@consta/icons/IconCommentDeleteFilled'
+import { IconDown } from '@consta/icons/IconDown'
+import { IconEdit } from '@consta/icons/IconEdit'
 import { IconLineAndBarChart } from '@consta/icons/IconLineAndBarChart'
 import { IconTarget } from '@consta/icons/IconTarget'
 import { IconTeam } from '@consta/icons/IconTeam'
@@ -74,8 +76,16 @@ export const InfoPage = () => {
           {t('infoPageContent.text2')}
         </Text>
 
+        <div className={styles.arrow}>
+          <IconDown size="l" view="link" />
+        </div>
         <div className={styles.btn}>
-          <Button size="l" label={t('infoPageContent.goToTest')} onClick={openTest} />
+          <Button
+            iconLeft={IconEdit}
+            size="l"
+            label={t('infoPageContent.goToTest')}
+            onClick={openTest}
+          />
         </div>
       </div>
     </PageContent>

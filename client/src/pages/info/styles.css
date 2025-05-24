@@ -12,11 +12,24 @@
     text-align: center;
 }
 
+.arrow {
+    margin: 2.5rem 0 1rem 0;
+
+    & span {
+        flex-shrink: 0;
+
+        box-sizing: content-box;
+        width: 4rem;
+        height: 4rem;
+
+        animation: bounce 2s infinite ease-in-out;
+    }
+}
+
 .btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 5rem;
 }
 
 .title {
@@ -27,7 +40,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 5rem;
-    margin: 5rem 0 2.5rem;
+    margin: 5rem 0;
 }
 
 .problemsWrapper > * {
@@ -55,10 +68,6 @@
     }
 }
 
-.problem:not(:last-child) {
-    margin-bottom: 5rem;
-}
-
 @media screen and (width <= 900px) {
     .problemsWrapper > * {
         width: 100%;
@@ -66,5 +75,15 @@
 
     .problem:not(:last-child) {
         margin-bottom: 0;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-10px);
+    }
+
+    50% {
+        transform: translateY(15px);
     }
 }

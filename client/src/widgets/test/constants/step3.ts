@@ -15,12 +15,6 @@ const createBaseOptions = (yes = 2, partial = 1, no = 0) => [
 export const Questions_STEP_3: QuestionItem[] = [
   {
     id: generateId(),
-    text: `${labelPrefix}1`,
-    problemType: 'externalCareer',
-    type: 'text',
-  },
-  {
-    id: generateId(),
     text: `${labelPrefix}2`,
     problemType: 'externalCareer',
     type: 'text',

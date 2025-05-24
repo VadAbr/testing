@@ -99,6 +99,8 @@ export const RegistrationForm = () => {
           <TextField
             label={t('registrationForm.ageField')}
             value={form.age}
+            type="number"
+            min={0}
             leftSide={IconWatchStroked}
             onChange={changeAge}
           />
