@@ -13,6 +13,7 @@
     "start:prod": "webpack serve --config webpack/prod.config.js",
     "build:dev": "webpack --config webpack/dev.config.js",
     "build:prod": "webpack --config webpack/prod.config.js",
+    "vercel-build": "npm run build:prod",
     "lint": "npm run lint:code && npm run lint:style",
     "lint:code": "eslint src -c eslint.config.mjs --quiet --color --cache --cache-location .cache/.eslintcache",
     "lint:style": "stylelint \"**/*.css\" --cache --cache-location .cache/.stylelintcache",
