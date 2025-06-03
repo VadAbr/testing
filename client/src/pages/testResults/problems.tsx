@@ -22,7 +22,7 @@ export const Problems = () => {
 
   const failedSteps = Object.entries(testResults ?? {}).filter(el => !el[1].isValid)
 
-  if (!isAllBad) {
+  if (isAllBad) {
     return <AllBad />
   }
 

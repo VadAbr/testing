@@ -23,5 +23,5 @@ export const AnalysisCategory: Record<ProblemType, AnalysisCategoryItem> = {
 export const AnalysisStep: Record<StepKey, { minNormalWeight: number }> = {
   step1: { minNormalWeight: 26 },
   step2: { minNormalWeight: 36 },
-  step3: { minNormalWeight: 38 },
+  step3: { minNormalWeight: 37 },
 }

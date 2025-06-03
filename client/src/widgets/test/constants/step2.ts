@@ -214,7 +214,7 @@ export const Questions_STEP_2: QuestionItem[] = [
     text: `${labelPrefix}29`,
     problemType: 'manners',
     type: 'choice',
-    options: createBaseOptions(1, 0, 1),
+    options: createBaseOptions(),
   },
   {
     id: generateId(),
@@ -277,7 +277,7 @@ export const Questions_STEP_2: QuestionItem[] = [
     text: `${labelPrefix}38`,
     problemType: 'communication',
     type: 'choice',
-    options: createBaseOptions(1, 0, 2),
+    options: createBaseOptions(),
   },
   {
     id: generateId(),
@@ -291,6 +291,6 @@ export const Questions_STEP_2: QuestionItem[] = [
     text: `${labelPrefix}40`,
     problemType: 'communication',
     type: 'choice',
-    options: createBaseOptions(0, 1, 2),
+    options: createBaseOptions(),
   },
 ]

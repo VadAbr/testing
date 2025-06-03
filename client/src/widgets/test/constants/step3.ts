@@ -112,7 +112,7 @@ export const Questions_STEP_3: QuestionItem[] = [
     options: [
       { label: `${selectOptionsPrefix}15.option1`, weight: 1 },
       { label: `${selectOptionsPrefix}15.option2`, weight: 1 },
-      { label: `${selectOptionsPrefix}15.option2`, weight: 2 },
+      { label: `${selectOptionsPrefix}15.option3`, weight: 2 },
     ],
   },
   {
@@ -148,7 +148,7 @@ export const Questions_STEP_3: QuestionItem[] = [
     text: `${labelPrefix}20`,
     problemType: 'internalCareer',
     type: 'choice',
-    options: createBaseOptions(0, 1, 2),
+    options: createBaseOptions(),
   },
   {
     id: generateId(),
@@ -183,7 +183,7 @@ export const Questions_STEP_3: QuestionItem[] = [
     text: `${labelPrefix}25`,
     problemType: 'internalCareer',
     type: 'choice',
-    options: createBaseOptions(1, 2, 0),
+    options: createBaseOptions(),
   },
   {
     id: generateId(),
@@ -211,7 +211,7 @@ export const Questions_STEP_3: QuestionItem[] = [
     text: `${labelPrefix}29`,
     problemType: 'internalCareer',
     type: 'choice',
-    options: createBaseOptions(),
+    options: createBaseOptions(1, 0, 1),
   },
   {
     id: generateId(),
@@ -274,20 +274,20 @@ export const Questions_STEP_3: QuestionItem[] = [
     text: `${labelPrefix}38`,
     problemType: 'careerSpace',
     type: 'choice',
-    options: createBaseOptions(),
+    options: createBaseOptions(1, 0, 2),
   },
   {
     id: generateId(),
     text: `${labelPrefix}39`,
     problemType: 'careerSpace',
     type: 'choice',
-    options: createBaseOptions(),
+    options: createBaseOptions(2, 0, 1),
   },
   {
     id: generateId(),
     text: `${labelPrefix}40`,
     problemType: 'careerSpace',
     type: 'choice',
-    options: createBaseOptions(),
+    options: createBaseOptions(0, 1, 2),
   },
 ]
