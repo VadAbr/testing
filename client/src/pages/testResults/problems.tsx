@@ -1,10 +1,6 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
-import type { IconComponent } from '@consta/icons/Icon'
-import { IconCommentDeleteFilled } from '@consta/icons/IconCommentDeleteFilled'
-import { IconLineAndBarChart } from '@consta/icons/IconLineAndBarChart'
-import { IconTeam } from '@consta/icons/IconTeam'
 import { IconWarning } from '@consta/icons/IconWarning'
 import { Text } from '@consta/uikit/Text'
 
@@ -32,18 +28,28 @@ export const Problems = () => {
     <div className={styles.cool}>
       <IconWarning size="l" view="warning" className={styles.icon} />
 
-      <Text weight="semibold" size="l">
-        {t('testResults.somethingBadText')}
-      </Text>
-
       <div className={styles.problemsContainer}>
         {failedSteps.map((el, i) => {
           const categories = el[1].categories.filter(el => !el.isValid).map(el => el.category)
-          return <Problem key={i} categories={categories} step={el[0]} />
+          return (
+            <Problem
+              key={i}
+              categories={categories}
+              step={el[0]}
+              isFirst={i === 0}
+              isLast={i === failedSteps.length - 1}
+            />
+          )
         })}
       </div>
 
-      <Text weight="medium">{t('testResults.allBadSubText')}</Text>
+      <Text weight="medium" size="l">
+        {t(
+          failedSteps.length === 1
+            ? 'testResults.somethingBadSubText'
+            : 'testResults.somethingBadSubTextMany',
+        )}
+      </Text>
 
       <AgainButton />
     </div>
@@ -53,34 +59,26 @@ export const Problems = () => {
 type Props = {
   step: string
   categories: string[]
+  isFirst: boolean
+  isLast: boolean
 }
 
-const icons: Record<string, IconComponent> = {
-  step1: IconTeam,
-  step2: IconCommentDeleteFilled,
-  step3: IconLineAndBarChart,
-}
-
-const Problem = ({ step, categories }: Props) => {
+const Problem = ({ step, categories, isFirst, isLast }: Props) => {
   const { t } = useTranslation()
-  const Icon = step in icons ? icons[step] : IconWarning
+  const problems = categories.map(el => t(`testResults.problems.${el}`)).join(', ')
+  // eslint-disable-next-line no-nested-ternary
+  const startText = isFirst
+    ? 'somethingBadTextFirst'
+    : isLast
+      ? 'somethingBadTextLast'
+      : 'somethingBadText'
 
   return (
     <div className={styles.problem}>
-      <Icon view="warning" className={styles.icon} />
-
-      <div className={styles.problemText}>
-        <Text weight="medium" size="l">
-          {t(`testResults.${step}`)}
-        </Text>
-        <ul className={styles.categories}>
-          {categories.map((el, i) => (
-            <li key={i}>
-              <Text size="m">{t(`testResults.problems.${el}`)}</Text>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Text weight="regular" size="l" align="left">
+        {t(`testResults.${startText}`, { problem: t(`testResults.${step}`) })}{' '}
+        {t(`testResults.${step}Description`, { problems })}
+      </Text>
     </div>
   )
 }

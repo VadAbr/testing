@@ -107,7 +107,7 @@ export const Questions_STEP_1: QuestionItem[] = [
     text: `${labelPrefix}12`,
     problemType: 'physiology',
     type: 'choice',
-    options: createBaseOptions(),
+    options: createBaseOptions(2, -1, -2),
   },
   {
     id: generateId(),

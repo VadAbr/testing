@@ -34,7 +34,7 @@ export const getWeight_pressure = (value: string): number => {
   const isSystolicMinor = systolic >= 90 && systolic <= 130
   const isDiastolicMinor = diastolic >= 60 && diastolic <= 90
 
-  return isSystolicMinor && isDiastolicMinor ? 0 : -2
+  return isSystolicMinor && isDiastolicMinor ? 1 : -2
 }
 
 const validateBloodPressure = (value: string): ValidationResult => {
@@ -82,4 +82,16 @@ const validateBloodPressure = (value: string): ValidationResult => {
   }
 
   return { isValid: true }
+}
+
+export const getWeight_BMI = (weight: number, height: number) => {
+  // Рассчитываем ИМТ: вес делим на квадрат роста
+  const bmi = weight / (height * height)
+
+  if (bmi >= 18 && bmi <= 25) {
+    return 2 // Норма
+  } else if (bmi < 18 || (bmi > 25 && bmi <= 28)) {
+    return 1 // Незначительное отклонение
+  }
+  return -2 // Значительное отклонение
 }

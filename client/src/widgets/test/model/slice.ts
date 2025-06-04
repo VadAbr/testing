@@ -43,26 +43,17 @@ export const TestSlice = createSlice({
   name: 'test',
   initialState,
   reducers: {
-    stepBack: state => {
-      const currentIndex = STEPS.findIndex(step => step.label === state.activeStep.label)
-      state.activeStep = STEPS[Math.max(currentIndex - 1, 0)]
-    },
-    stepForward: state => {
-      const currentIndex = STEPS.findIndex(step => step.label === state.activeStep.label)
-      state.activeStep = STEPS[Math.min(currentIndex + 1, STEPS.length - 1)]
-    },
-    setStep: (state, action: PayloadAction<InitialState['activeStep']>) => {
-      state.activeStep = action.payload
-    },
     setResults: (state, action: PayloadAction<InitialState['testResults']>) => {
       state.testResults = action.payload
     },
     changeQuestion: (state, action: PayloadAction<QuestionItem>) => {
       const question = state.questions.find(el => el.id === action.payload.id)
 
-      if (question) {
-        Object.assign(question, action.payload)
+      if (!question) {
+        return
       }
+
+      Object.assign(question, action.payload)
     },
     resetTest: state => {
       state.testResults = initialState.testResults
