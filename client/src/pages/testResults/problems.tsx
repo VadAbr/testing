@@ -20,7 +20,9 @@ export const Problems = () => {
   const testResults = useSelector(TestSlice.selectors.testResults)
   const { t } = useTranslation()
 
-  const failedSteps = Object.entries(testResults ?? {}).filter(el => !el[1].isValid)
+  const failedSteps = Object.entries(testResults ?? {}).filter(el =>
+    el[1].categories.some(category => !category.isValid),
+  )
 
   if (isAllBad) {
     return <AllBad />

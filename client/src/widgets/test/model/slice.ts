@@ -4,11 +4,12 @@ import { createSelector, createSlice } from '@reduxjs/toolkit'
 import { Questions_STEP_1, Questions_STEP_2, Questions_STEP_3, STEPS } from '../constants'
 import { shuffleArray } from '../libs'
 
-import type { InitialState, QuestionItem } from './types'
+import type { CategoryResult, InitialState, QuestionItem } from './types'
 
 const initialState: InitialState = {
   activeStep: STEPS[0],
-  questions: shuffleArray([...Questions_STEP_1, ...Questions_STEP_2, ...Questions_STEP_3]),
+  //TODO: вернуть рандом
+  questions: [...Questions_STEP_1, ...Questions_STEP_2, ...Questions_STEP_3],
   testResults: null,
 }
 
@@ -22,10 +23,14 @@ const questionById = createSelector(
 )
 const testResults = createSelector(getState, state => state.testResults)
 const testResultsDetails = createSelector(getState, state => {
-  const results = Object.values(state.testResults ?? {})
-  const isAllCool = results.every(el => el.isValid)
-  const isSomethingBad = results.some(el => !el.isValid)
-  const isAllBad = results.every(el => !el.isValid)
+  const stepsResults = Object.values(state.testResults ?? {})
+  const allProblems = stepsResults.reduce<CategoryResult[]>((acc, step) => {
+    return acc.concat(step.categories)
+  }, [])
+
+  const isAllCool = allProblems.every(el => el.isValid)
+  const isSomethingBad = allProblems.some(el => !el.isValid)
+  const isAllBad = allProblems.every(el => !el.isValid)
 
   return {
     isAllCool,
@@ -61,7 +66,8 @@ export const TestSlice = createSlice({
     },
     resetTest: state => {
       state.testResults = initialState.testResults
-      state.questions = shuffleArray(initialState.questions)
+      //TODO: вернуть рандом
+      state.questions = initialState.questions
     },
   },
   selectors: {

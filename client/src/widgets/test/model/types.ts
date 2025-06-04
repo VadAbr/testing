@@ -80,7 +80,7 @@ export type AnalysisCategoryItem = {
 
 export type StepKey = 'step1' | 'step2' | 'step3'
 
-type CategoryResult = {
+export type CategoryResult = {
   isValid: boolean
   totalScore: number
   category: ProblemType
