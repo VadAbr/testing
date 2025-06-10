@@ -243,7 +243,7 @@
       "allBadText": "Le diagnostic express des échecs professionnels a montré qu'il y a un échec total dans votre développement de carrière, c'est-à-dire que trois échecs sont révélés en même temps : l'analyse de soi, la présentation de soi et l'analyse de l'environnement professionnel. Il se peut que vous ayez choisi la mauvaise profession dès le départ, ou que vous ayez changé d'orientation en termes d'objectifs et de valeurs, que vous ayez subi un épuisement professionnel, des crises d'âge et des crises existentielles, une tragédie personnelle",
       "allBadSubText": "Il est possible de remédier au dysfonctionnement détecté, soit par soi-même, soit en faisant appel à un spécialiste. Il vaut la peine de commencer par des orientations d'orientation professionnelle",
       "somethingBadTextFirst": "Le diagnostic rapide de l'échec professionnel a révélé qu'il existe un {{problem}} bloc d'échec dans votre développement de carrière.",
-      "somethingBadText": "En outre, les diagnostics ont révélé une défaillance de l'unité {{problem}}.",
+      "somethingBadText": "L'analyse a détecté des dysfonctionnements dans les modules suivants:",
       "somethingBadTextLast": "Une défaillance du bloc {{problem}} a également été détectée.",
       "somethingBadSubText": "Il est possible de remédier au dysfonctionnement détecté, soit par soi-même, soit en faisant appel à un spécialiste",
       "somethingBadSubTextMany": "Il est possible de remédier aux défauts identifiés, soit par soi-même, soit en faisant appel à un spécialiste",

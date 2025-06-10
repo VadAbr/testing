@@ -243,7 +243,7 @@
       "allBadText": "Die Express-Diagnose des beruflichen Scheiterns hat ergeben, dass ein Totalversagen in Ihrer beruflichen Entwicklung vorliegt, d.h. es werden gleich drei Versäumnisse identifiziert: Selbstanalyse, Selbstpräsentation und Analyse des beruflichen Umfelds, Sie haben möglicherweise zunächst den falschen Beruf gewählt, oder Sie hatten einen Wechsel der Ziel- und Wertorientierungen, berufliches Burnout, Alters- und Existenzkrisen, persönliche Tragödien.",
       "allBadSubText": "Es ist möglich, das festgestellte Scheitern sowohl eigenständig als auch mit einem Spezialisten zu beseitigen. Es lohnt sich, mit der Berufsberatung zu beginnen",
       "somethingBadTextFirst": "Die Schnelldiagnose zum Karrieremisserfolg hat gezeigt, dass es einen {{problem}}-Block Misserfolg in Ihrer beruflichen Entwicklung gibt.",
-      "somethingBadText": "Darüber hinaus ergab die Diagnose einen Ausfall der {{problem}}-Einheit.",
+      "somethingBadText": "Die Analyse zeigt Störungen in folgenden Bereichen:",
       "somethingBadTextLast": "Es wurde auch ein Fehler im {{problem}}-Block festgestellt.",
       "somethingBadSubText": "Sie können die festgestellte Störung entweder selbst oder durch einen Fachmann beheben",
       "somethingBadSubTextMany": "Es ist möglich, die festgestellten Fehler selbst oder durch einen Fachmann zu beheben",

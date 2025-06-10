@@ -243,7 +243,7 @@
       "allBadText": "L'Express-diagnosi dei fallimenti di carriera ha dimostrato che c'è un fallimento totale nello sviluppo della carriera, cioè tre fallimenti in una volta sola: l'autoanalisi, l'autopresentazione e l'analisi dell'ambiente di carriera, si può aver scelto la professione sbagliata fin dall'inizio, o si può aver avuto un cambiamento di obiettivi e orientamenti di valore, burnout professionale, crisi di età ed esistenziali, tragedie personali.",
       "allBadSubText": "È possibile rimediare al malfunzionamento rilevato da soli o con l'aiuto di uno specialista. Vale la pena di iniziare con un orientamento alla carriera",
       "somethingBadTextFirst": "La Diagnosi Rapida del Fallimento di Carriera ha rivelato che c'è un {{problem}} di fallimento nello sviluppo della vostra carriera.",
-      "somethingBadText": "Inoltre, la diagnostica ha rivelato un guasto dell'unità {{problem}}.",
+      "somethingBadText": "Sono stati rilevati problemi nei seguenti ambiti:",
       "somethingBadTextLast": "È stato rilevato anche un errore del blocco {{problem}}.",
       "somethingBadSubText": "È possibile rimediare al malfunzionamento rilevato da soli o con l'aiuto di uno specialista",
       "somethingBadSubTextMany": "È possibile rimediare ai difetti individuati da soli o con l'aiuto di uno specialista",

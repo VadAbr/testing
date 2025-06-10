@@ -243,7 +243,7 @@
       "allBadText": "Express-diagnostics of career failures ha demostrado que existe un Fracaso Total en el desarrollo de tu carrera, es decir, se revelan tres fracasos a la vez: autoanálisis, autopresentación y análisis del entorno profesional, puede que hayas elegido la profesión equivocada desde el principio, o que hayas tenido un cambio de objetivos y orientaciones de valores, agotamiento profesional, crisis existenciales y de edad, tragedia personal",
       "allBadSubText": "Es posible remediar la avería detectada por su cuenta o con un especialista. Merece la pena empezar por la orientación profesional",
       "somethingBadTextFirst": "El Diagnóstico Rápido de Fracaso de Carrera reveló que, que hay un {{problem}} fracaso de bloque en el desarrollo de su carrera.",
-      "somethingBadText": "Además, los diagnósticos revelaron un fallo de la unidad {{problem}}.",
+      "somethingBadText": "El análisis detectó fallos en:",
       "somethingBadTextLast": "También se ha detectado un fallo en el bloque {{problem}}.",
       "somethingBadSubText": "Es posible solucionar la avería detectada por tu cuenta o con un especialista",
       "somethingBadSubTextMany": "Es posible subsanar los fallos detectados por su cuenta o con la ayuda de un especialista",

@@ -243,7 +243,7 @@
       "allBadText": "Express-diagnostics of career failures has shown that there is a Total Failure in your career development, i.e. three failures are revealed at once: self-analysis, self-presentation and career environment analysis, you may have chosen the wrong profession from the beginning, or you may have had a change of goal and value orientations, professional burnout, age and existential crises, personal tragedy",
       "allBadSubText": "It is possible to remedy the identified malfunction either independently or with a specialist. It is worth starting with career guidance",
       "somethingBadTextFirst": "The Career Failure Rapid Diagnostic revealed that, that there is a {{problem}} block failure in your career development.",
-      "somethingBadText": "In addition, diagnostics revealed a failure of the {{problem}} unit.",
+      "somethingBadText": "Analysis revealed setbacks in:",
       "somethingBadTextLast": "A failure of the {{problem}} block has also been detected.",
       "somethingBadSubText": "It is possible to correct the identified failure either on your own or with a specialist",
       "somethingBadSubTextMany": "It is possible to eliminate the detected failures both independently and with a specialist",
