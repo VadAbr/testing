@@ -291,6 +291,12 @@
     },
     "notification": {
       "emptyForm": "Compila tutti i campi"
+    },
+    "payment": {
+      "title": "Ultimo passo rimasto",
+      "description": "Dopo aver fatto clic sul pulsante di pagamento, si verrà reindirizzati alla pagina corrispondente. Tornare a questa scheda dopo aver effettuato il pagamento. Non chiudete questa pagina, altrimenti non sapremo dell'avvenuto pagamento!",
+      "cancelBtn": "Annullamento del pagamento",
+      "payBtn": "Pagamento"
     }
   }
 }

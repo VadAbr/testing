@@ -5,12 +5,10 @@ import { STORAGE_KEYS } from '../constants'
 
 export const axiosInstance = axios.create()
 
-const setupConfig = (config: InternalAxiosRequestConfig) => {
-  const token = localStorage.getItem(STORAGE_KEYS.token)
+const API_TOKEN = ''
 
-  if (token) {
-    config.headers.authorization = `Bearer ${token}`
-  }
+const setupConfig = (config: InternalAxiosRequestConfig) => {
+  config.headers.authorization = `Token ${API_TOKEN}`
 
   return config
 }

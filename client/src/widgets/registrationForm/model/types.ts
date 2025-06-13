@@ -1,6 +1,6 @@
 export type InitialState = {
   form: RegistrationForm
-  isAllReadyFilled: boolean
+  activeStep: 'test' | 'form' | 'payment'
 }
 
 export type RegistrationForm = {

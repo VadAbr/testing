@@ -15,7 +15,7 @@ const initialState: InitialState = {
     keyQuestionField: null,
     isChecked: false,
   },
-  isAllReadyFilled: false,
+  activeStep: 'form',
 }
 
 // Selectors
@@ -35,10 +35,13 @@ export const RegistrationFormSlice = createSlice({
     changeIsAllReadyFilled: (state, action: PayloadAction<boolean>) => {
       state.isAllReadyFilled = action.payload
     },
+    setStep: (state, action: PayloadAction<InitialState['activeStep']>) => {
+      state.activeStep = action.payload
+    },
   },
   selectors: {
     getForm,
     getFormIsFilled,
-    isAllReadyFilled: state => state.isAllReadyFilled,
+    getActiveStep: state => state.activeStep,
   },
 })

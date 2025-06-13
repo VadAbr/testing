@@ -291,6 +291,12 @@
     },
     "notification": {
       "emptyForm": "Bitte alle Felder ausfüllen"
+    },
+    "payment": {
+      "title": "There's one last step left",
+      "description": "Nach dem Anklicken des Zahlungsbuttons werden Sie auf die entsprechende Seite weitergeleitet. Kehren Sie nach erfolgreicher Zahlung zu dieser Seite zurück. Schließen Sie diese Seite nicht, da wir sonst nichts von der Zahlung erfahren!",
+      "cancelBtn": "Annullierung der Zahlung",
+      "payBtn": "Bezahlen"
     }
   }
 }

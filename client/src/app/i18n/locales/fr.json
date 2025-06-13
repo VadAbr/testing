@@ -291,6 +291,12 @@
     },
     "notification": {
       "emptyForm": "Remplissez tous les champs"
+    },
+    "payment": {
+      "title": "Dernière étape restante",
+      "description": "Après avoir cliqué sur le bouton de paiement, vous serez redirigé vers la page correspondante. Revenez à cet onglet après avoir effectué le paiement. Ne fermez pas cette page, sinon nous n'aurons pas connaissance du paiement !",
+      "cancelBtn": "Annuler le paiement",
+      "payBtn": "Payer"
     }
   }
 }

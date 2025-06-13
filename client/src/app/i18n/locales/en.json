@@ -291,6 +291,12 @@
     },
     "notification": {
       "emptyForm": "Please fill in all fields"
+    },
+    "payment": {
+      "title": "Es gibt noch einen letzten Schritt",
+      "description": "After clicking the payment button you will be redirected to the corresponding page. Return to this tab after successful payment. Do not close this page, otherwise we will not know about the payment!",
+      "cancelBtn": "Cancel payment",
+      "payBtn": "Pay"
     }
   }
 }

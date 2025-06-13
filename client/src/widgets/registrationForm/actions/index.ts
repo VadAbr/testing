@@ -16,6 +16,6 @@ export const submitForm = createAsyncThunk(
       return
     }
 
-    dispatch(RegistrationFormSlice.actions.changeIsAllReadyFilled(true))
+    dispatch(RegistrationFormSlice.actions.setStep('payment'))
   },
 )

@@ -8,15 +8,21 @@ import { cnMixFlex } from '@consta/uikit/MixFlex'
 
 import { PATHS } from '@shared/constants'
 import { useAppDispatch } from '@shared/hooks'
+import { RegistrationFormSlice } from '@widgets/registrationForm'
 import { TestSlice } from '@widgets/test'
 
-export const AgainButton = () => {
+type Props = {
+  isAllBad?: boolean
+}
+
+export const AgainButton = ({ isAllBad }: Props) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
   const restartTest = () => {
     dispatch(TestSlice.actions.resetTest())
+    dispatch(RegistrationFormSlice.actions.setStep('payment'))
     navigate(PATHS.test, { replace: true })
   }
 
@@ -28,14 +34,16 @@ export const AgainButton = () => {
         label={t('testResults.again')}
         onClick={restartTest}
       />
-      <Button
-        as="a"
-        href="mailto:youremail@example.com"
-        size="l"
-        view="secondary"
-        iconLeft={IconSendMessage}
-        label={t('testResults.contactToUs')}
-      />
+      {isAllBad && (
+        <Button
+          as="a"
+          href="mailto:youremail@example.com"
+          size="l"
+          view="secondary"
+          iconLeft={IconSendMessage}
+          label={t('testResults.contactToUs')}
+        />
+      )}
     </div>
   )
 }

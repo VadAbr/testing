@@ -43,8 +43,6 @@ export const Problems = () => {
         })}
       </div>
 
-      <Text weight="medium">{t('testResults.allBadSubText')}</Text>
-
       <AgainButton />
     </div>
   )

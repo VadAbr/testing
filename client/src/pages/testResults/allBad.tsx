@@ -16,7 +16,7 @@ export const AllBad = () => {
       <Text size="l">{t('testResults.allBadText')}</Text>
       <Text size="l">{t('testResults.allBadSubText')}</Text>
 
-      <AgainButton />
+      <AgainButton isAllBad={true} />
     </div>
   )
 }

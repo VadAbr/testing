@@ -1,0 +1,14 @@
+.container {
+    width: 90rem;
+    max-width: 90rem;
+    padding: 5rem;
+    background-color: white;
+}
+
+.testBtn {
+    margin: 2.5rem 0;
+}
+
+.payBtn {
+    margin-top: 2.5rem;
+}

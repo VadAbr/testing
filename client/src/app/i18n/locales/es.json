@@ -291,6 +291,12 @@
     },
     "notification": {
       "emptyForm": "Complete todos los campos"
+    },
+    "payment": {
+      "title": "Último paso",
+      "description": "Después de pulsar el botón de pago será redirigido a la página correspondiente. Vuelva a esta pestaña después de realizar el pago correctamente. No cierre esta página, de lo contrario no sabremos nada del pago.",
+      "cancelBtn": "Cancelar el pago",
+      "payBtn": "Pagar a"
     }
   }
 }
