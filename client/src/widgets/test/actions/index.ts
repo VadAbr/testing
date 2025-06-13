@@ -12,8 +12,8 @@ export const calculateTestResult = createAsyncThunk(
     const weightQ = questions.find(el => el.id === 'weight')
     const heightQ = questions.find(el => el.id === 'height')
 
-    const weightValue = Number(weightQ.value)
-    const heightValue = Number(heightQ.value)
+    const weightValue = Number(weightQ?.value)
+    const heightValue = Number(heightQ?.value)
 
     // Подсчет индекса массы тела
     if (weightQ && heightQ && weightValue && heightValue) {

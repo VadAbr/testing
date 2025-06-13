@@ -265,11 +265,11 @@
         "careerSpace": "Análisis del espacio profesional"
       },
       "step1": "Autoevaluación",
-      "step1Description":"Esto se expresa en el fracaso de la fijación de objetivos ({{problems}}). La presencia de altos indicadores de rigidez no es la causa del fracaso del autoanálisis, sólo afecta a la velocidad de alcanzar el resultado",
+      "step1Description": "Esto se expresa en el fracaso de la fijación de objetivos ({{problems}}). La presencia de altos indicadores de rigidez no es la causa del fracaso del autoanálisis, sólo afecta a la velocidad de alcanzar el resultado",
       "step2": "Gestión de autopresentación",
-      "step2Description":"Esto se expresa en el fracaso de las normas éticas ({{problems}})",
+      "step2Description": "Esto se expresa en el fracaso de las normas éticas ({{problems}})",
       "step3": "Análisis del entorno profesional",
-      "step3Description":"Esto se manifiesta en la falta de análisis del entorno externo de la carrera ({{problems}})",
+      "step3Description": "Esto se manifiesta en la falta de análisis del entorno externo de la carrera ({{problems}})",
       "contactToUs": "Contáctenos"
     },
     "registrationForm": {

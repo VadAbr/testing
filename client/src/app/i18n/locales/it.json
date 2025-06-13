@@ -265,11 +265,11 @@
         "careerSpace": "analisi spazio professionale"
       },
       "step1": "«Autoanalisi»",
-      "step1Description":"Questo si esprime nel fallimento della definizione degli obiettivi ({{problems}}). La presenza di alti indicatori di rigidità non è la causa del fallimento dell'autoanalisi, ma influisce solo sulla velocità di raggiungimento del risultato",
+      "step1Description": "Questo si esprime nel fallimento della definizione degli obiettivi ({{problems}}). La presenza di alti indicatori di rigidità non è la causa del fallimento dell'autoanalisi, ma influisce solo sulla velocità di raggiungimento del risultato",
       "step2": "«Gestione self-presentazione»",
-      "step2Description":"Questo si esprime nel fallimento delle norme etiche ({{problems}})",
+      "step2Description": "Questo si esprime nel fallimento delle norme etiche ({{problems}})",
       "step3": "«Analisi ambiente professionale»",
-      "step3Description":"Questo si esprime nell'incapacità di analizzare l'ambiente di carriera esterno ({{problems}})",
+      "step3Description": "Questo si esprime nell'incapacità di analizzare l'ambiente di carriera esterno ({{problems}})",
       "contactToUs": "Contattateci"
     },
     "registrationForm": {

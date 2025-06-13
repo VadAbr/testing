@@ -265,11 +265,11 @@
         "careerSpace": "analyse de l'espace professionnel"
       },
       "step1": "«Auto-analyse»",
-      "step1Description":"Cela se traduit par l'échec de la fixation d'objectifs ({{problems}}). La présence d'indicateurs élevés de rigidité n'est pas la cause de l'échec de l'auto-analyse, elle affecte seulement la vitesse d'obtention du résultat.",
+      "step1Description": "Cela se traduit par l'échec de la fixation d'objectifs ({{problems}}). La présence d'indicateurs élevés de rigidité n'est pas la cause de l'échec de l'auto-analyse, elle affecte seulement la vitesse d'obtention du résultat.",
       "step2": "«Gestion de l'autoprésentation»",
-      "step2Description":"Cela se traduit par l'absence de normes éthiques ({{problems}})",
+      "step2Description": "Cela se traduit par l'absence de normes éthiques ({{problems}})",
       "step3": "«Analyse de l'environnement professionnel»",
-      "step3Description":"Cela se traduit par l'échec de l'analyse de l'environnement professionnel externe ({{problems}}).",
+      "step3Description": "Cela se traduit par l'échec de l'analyse de l'environnement professionnel externe ({{problems}}).",
       "contactToUs": "Contactez nous"
     },
     "registrationForm": {
