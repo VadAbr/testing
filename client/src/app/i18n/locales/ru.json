@@ -272,9 +272,9 @@
       "step3Description": "Это выражается в сбое анализа внешней карьерной среды ({{problems}})",
       "contactToUs": "Связаться с нами"
     },
-    "registrationForm": {
-      "title": "Входная анкета",
+    "authorization": {
       "nameField": "Имя (nickname)",
+      "passwordField": "Пароль",
       "ageField": "Возраст, лет",
       "activityField": "Сфера деятельности",
       "educationField": "Образование",
@@ -286,8 +286,15 @@
         "options1": "Да",
         "options2": "Нет"
       },
-      "checkbox": "Согласие на обработку данных",
-      "startTest": "Начать тестирование"
+      "checkbox": "Согласие на обработку данных"
+    },
+    "login": {
+      "title": "Логин",
+      "submit": "Войти"
+    },
+    "registration": {
+      "title": "Регистрация",
+      "submit": "Создать"
     },
     "notification": {
       "emptyForm": "Заполните все поля"

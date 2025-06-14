@@ -59,15 +59,17 @@ export const ShopApi = apiSlice.injectEndpoints({
         }
       },
     }),
-    cancelInvoice: build.mutation<any, string>({
+    cancelInvoice: build.mutation<boolean, string>({
       queryFn: async invoiceId => {
         try {
-          const data = await axiosInstance.post(ApiPath.cancelInvoice, {
-            uuid: invoiceId,
-          })
+          const data = await axiosInstance
+            .post<unknown>(ApiPath.cancelInvoice, {
+              uuid: invoiceId,
+            })
+            .then(res => res.data)
 
           return {
-            data,
+            data: Boolean(data),
           }
         } catch (error) {
           return {

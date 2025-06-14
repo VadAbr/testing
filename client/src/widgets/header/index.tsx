@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { IconIntroduction } from '@consta/icons/IconIntroduction'
-import { Button } from '@consta/uikit/Button'
 import { Tabs } from '@consta/uikit/Tabs'
 
 import { LanguageSwitch } from '@features/languageSwitch'
+import { LoginBtn } from '@features/loginBtn'
 import { PATHS } from '@shared/constants'
 import { Toolbar } from '@shared/ui'
 
@@ -28,12 +27,7 @@ const Right = () => {
     <div className={styles.right}>
       <LanguageSwitch />
 
-      {/*<Button*/}
-      {/*  label={t('navigation.login')}*/}
-      {/*  form="round"*/}
-      {/*  view="secondary"*/}
-      {/*  iconRight={IconIntroduction}*/}
-      {/*/>*/}
+      <LoginBtn />
     </div>
   )
 }

@@ -17,7 +17,7 @@ export const sendEmail: RequestHandler = async (req, res) => {
     const info = await transporter.sendMail({
       from: process.env.SMTP_USER,
       to: 'vadimabramov322@gmail.com',
-      subject: 'Новое письмо от пользователя',
+      subject: `Новое письмо от пользователя ${req.user?.name ?? ''}`,
       text: `Письмо от: ${fromEmail}`,
     });
 

@@ -1,47 +1,57 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
-import { Navigate } from 'react-router-dom'
 
-import { PATHS } from '@shared/constants'
+import { AuthSlice } from '@shared/store'
 import { PageContent } from '@shared/ui'
 import { PaymentForm } from '@widgets/paymentForm'
-import { RegistrationForm, RegistrationFormSlice } from '@widgets/registrationForm'
+import { LoginOrRegistrForm } from '@widgets/registrationForm'
 import { Test } from '@widgets/test'
 
 import styles from './styles.css'
 
 export const TestPage = () => {
-  const activeStep = useSelector(RegistrationFormSlice.selectors.getActiveStep)
+  const [activeStep, setActiveStep] = React.useState<'form' | 'payment' | 'test'>('form')
+  const user = useSelector(AuthSlice.selectors.getUser)
 
-  if (activeStep === 'payment') {
-    return (
-      <PageContent className={styles.wrapper}>
-        <div className={styles.formContainer}>
-          <PaymentForm />
-        </div>
-      </PageContent>
-    )
-  }
+  useEffect(() => {
+    if (user) {
+      setActiveStep('payment')
+    }
+  }, [user])
 
   if (activeStep === 'form') {
     return (
       <PageContent className={styles.wrapper}>
         <div className={styles.formContainer}>
-          <RegistrationForm />
+          <LoginOrRegistrForm
+            onSuccess={() => {
+              setActiveStep('payment')
+            }}
+          />
         </div>
       </PageContent>
     )
   }
 
-  if (activeStep === 'test') {
+  if (activeStep === 'payment') {
     return (
-      <PageContent>
-        <div className={styles.testContainer}>
-          <Test />
+      <PageContent className={styles.wrapper}>
+        <div className={styles.formContainer}>
+          <PaymentForm
+            onSuccess={() => {
+              setActiveStep('test')
+            }}
+          />
         </div>
       </PageContent>
     )
   }
 
-  return <Navigate to={PATHS.root} />
+  return (
+    <PageContent>
+      <div className={styles.testContainer}>
+        <Test />
+      </div>
+    </PageContent>
+  )
 }

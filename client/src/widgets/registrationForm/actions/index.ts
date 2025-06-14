@@ -13,8 +13,10 @@ export const submitForm = createAsyncThunk(
 
     if (isFormInvalid) {
       dispatch(addNotification({ message: 'notification.emptyForm', status: 'alert' }))
-      return
+      throw new Error('Form is invalid')
     }
+
+    //Добавить регистрация
 
     dispatch(RegistrationFormSlice.actions.setStep('payment'))
   },

@@ -8,7 +8,7 @@ let db: Db | null = null;
 export const connectDB = async (): Promise<void> => {
   if (db) return;
 
-  console.log('Connected to MongoDB...');
+  console.log('Connecting to MongoDB...');
   const uri = process.env.MONGO_URI as string;
   const client = new MongoClient(uri, {
     serverSelectionTimeoutMS: 5000, // таймаут ожидания сервера
@@ -18,7 +18,7 @@ export const connectDB = async (): Promise<void> => {
     await client.connect();
     // дополнительно проверим, что БД доступна
     await client.db().command({ ping: 1 });
-    db = client.db('jwtApp');
+    db = client.db('testing');
     console.log('✅ MongoDB connected successfully');
   } catch (err: any) {
     console.error('❌ MongoDB connection error:', err.message);

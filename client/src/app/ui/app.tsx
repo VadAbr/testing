@@ -4,6 +4,7 @@ import { RouterProvider } from 'react-router-dom'
 import { presetGpnDefault, Theme } from '@consta/uikit/Theme'
 
 import { withNotifications } from '@shared/store'
+import { LoginOrRegistrModal } from '@widgets/registrationForm'
 
 import '../i18n'
 
@@ -19,6 +20,7 @@ export const App = () => (
   <Theme preset={presetGpnDefault}>
     <ReduxProvider store={appStore}>
       <AppWithNotifications />
+      <LoginOrRegistrModal />
     </ReduxProvider>
   </Theme>
 )

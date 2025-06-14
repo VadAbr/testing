@@ -6,16 +6,18 @@ import type { InitialState } from './types'
 const initialState: InitialState = {
   form: {
     name: '',
-    age: '',
+    password: '',
+    age: 0,
     activityField: '',
     education: '',
-    workExperience: '',
+    workExperience: 0,
     position: '',
     email: '',
     keyQuestionField: null,
     isChecked: false,
   },
   activeStep: 'form',
+  isAuthModalActive: false,
 }
 
 // Selectors
@@ -32,16 +34,17 @@ export const RegistrationFormSlice = createSlice({
     changeField: (state, action: PayloadAction<Partial<InitialState['form']>>) => {
       Object.assign(state.form, action.payload)
     },
-    changeIsAllReadyFilled: (state, action: PayloadAction<boolean>) => {
-      state.isAllReadyFilled = action.payload
-    },
     setStep: (state, action: PayloadAction<InitialState['activeStep']>) => {
       state.activeStep = action.payload
+    },
+    resetForm: state => {
+      state.form = initialState.form
     },
   },
   selectors: {
     getForm,
     getFormIsFilled,
     getActiveStep: state => state.activeStep,
+    getIsAuthModalActive: state => state.isAuthModalActive,
   },
 })
