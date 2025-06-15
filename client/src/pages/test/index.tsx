@@ -18,7 +18,6 @@ export const TestPage = () => {
 
   const { data, isFetching } = TestApi.useGetCurrentTestQuery(undefined, {
     refetchOnMountOrArgChange: true,
-    skip: isAdmin,
   })
 
   useLayoutEffect(() => {
