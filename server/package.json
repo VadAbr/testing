@@ -2,11 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "main": "src/index.ts",
-  "type": "module",
   "scripts": {
     "dev": "tsx watch src/index.ts",
-    "build": "cross-env NODE_ENV=production tsc --project tsconfig.json && tsconfig-replace-paths --project tsconfig.json",
-    "start": "cross-env NODE_ENV=production node dist/index.js node dist/index.js",
+    "build": "tsc --build",
+    "start": "node dist/index.js",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write ."
   },
