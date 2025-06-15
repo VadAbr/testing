@@ -1,12 +1,22 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
+    "target": "ESNext",
+    "isolatedModules": true,
     "esModuleInterop": true,
-    "rootDir": "src",
-    "outDir": "dist",
-    "strict": true
+    "noEmit": true,
+    "allowImportingTsExtensions": true,
+    "outDir": "./dist",
+    "paths": {
+      "src/*": ["src/*"]
+    },
+    "lib": [ "esnext" ],
+    "types": [ "node" ],
+    "rootDir": "./src",
+    "baseUrl": "./"
   },
-  "include": ["src"]
+  "include": ["src/**/*.ts"],
+  "exclude": [ "node_modules" ]
 }
