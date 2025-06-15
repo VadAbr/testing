@@ -1,12 +1,16 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
+import { TestApi } from '@entities/test'
+import { AuthSlice } from '@shared/store'
+
 import { calculateTest, getWeight_BMI } from '../libs'
 import { TestSlice } from '../model'
 
 export const calculateTestResult = createAsyncThunk(
   'test/calculateTestResult',
-  (_, { dispatch, getState }) => {
+  async (_, { dispatch, getState }) => {
     const state = getState() as RootState
+    const isAdmin = AuthSlice.selectors.getIsAdmin(state)
     let questions = TestSlice.selectors.getQuestions(state)
 
     const weightQ = questions.find(el => el.id === 'weight')
@@ -22,7 +26,11 @@ export const calculateTestResult = createAsyncThunk(
     }
 
     try {
-      dispatch(TestSlice.actions.setResults(calculateTest(questions)))
+      const testResult = calculateTest(questions)
+      const testId = state.test.currentTestId
+
+      dispatch(TestSlice.actions.setResults(testResult))
+      await dispatch(TestApi.endpoints.completeTest.initiate({ testId, testResult }))
     } catch (e) {
       console.error(e)
     }

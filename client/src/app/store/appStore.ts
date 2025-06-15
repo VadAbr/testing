@@ -3,6 +3,7 @@ import { configureStore } from '@reduxjs/toolkit'
 import { setupListeners } from '@reduxjs/toolkit/query'
 
 import { apiSlice } from '@shared/api'
+import { NotificationMiddleware } from '@shared/store'
 
 import { rootReducer } from './rootReducer'
 
@@ -10,7 +11,10 @@ function createStore() {
   const store = configureStore({
     reducer: rootReducer,
     middleware: getDefaultMiddleware =>
-      getDefaultMiddleware({ serializableCheck: false }).concat([apiSlice.middleware]),
+      getDefaultMiddleware({ serializableCheck: false }).concat([
+        apiSlice.middleware,
+        NotificationMiddleware.middleware,
+      ]),
   })
 
   setupListeners(store.dispatch)

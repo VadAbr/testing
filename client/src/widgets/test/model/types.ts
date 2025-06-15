@@ -3,6 +3,7 @@ import type { StepsItemDefault } from '@consta/uikit/Steps'
 export type InitialState = {
   activeStep: StepsItemDefault
   questions: QuestionItem[]
+  currentTestId: string
   testResults: TestResult | null
 }
 

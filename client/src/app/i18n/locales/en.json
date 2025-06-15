@@ -6,7 +6,8 @@
       "mainPageLabel": "Main",
       "testPageLabel": "Testing",
       "videosPageLabel": "Videos",
-      "infoPageLabel": "Description"
+      "infoPageLabel": "Description",
+      "adminPanel": "Admin Panel"
     },
     "404PageContent": {
       "title": "Page not found",
@@ -272,29 +273,43 @@
       "step3Description": "This is reflected in a failure to analyze the external career environment ({{problems}})",
       "contactToUs": "Contact us"
     },
-    "registrationForm": {
-      "title": "Entry Form",
+    "authorization": {
       "nameField": "Name (nickname)",
-      "ageField": "Age (years)",
-      "activityField": "Industry",
+      "passwordField": "Password",
+      "ageField": "Age, years",
+      "activityField": "Field of activity",
       "educationField": "Education",
-      "workExperienceField": "Work Experience",
+      "workExperienceField": "Work experience",
       "positionField": "Position",
+      "password": "Password",
       "emailField": "Email",
-      "keyQuestionField": "Are you satisfied with your career development",
+      "keyQuestionField": "Are you satisfied with your career development?",
       "keyQuestionOptions": {
         "options1": "Yes",
         "options2": "No"
       },
-      "checkbox": "Consent to data processing",
-      "startTest": "Start Test"
+      "checkbox": "Consent to data processing"
+    },
+    "login": {
+      "title": "Login",
+      "submit": "Sign in",
+      "changeToRegistration": "Register",
+      "changeToLogin": "Login"
+    },
+    "registration": {
+      "title": "Registration",
+      "submit": "Create",
+      "changeToRegistration": "Register",
+      "changeToLogin": "Login"
     },
     "notification": {
-      "emptyForm": "Please fill in all fields"
+      "emptyForm": "Please fill out all fields",
+      "someError": "Something went wrong, please try again later"
     },
     "payment": {
-      "title": "Es gibt noch einen letzten Schritt",
-      "description": "After clicking the payment button you will be redirected to the corresponding page. Return to this tab after successful payment. Do not close this page, otherwise we will not know about the payment!",
+      "title": "One last step",
+      "description": "After clicking the payment button, you will be redirected to the corresponding page. Return to this tab after successful payment",
+      "oldPayment": "A pending payment was found. You can complete it or cancel and start over",
       "cancelBtn": "Cancel payment",
       "payBtn": "Pay"
     }

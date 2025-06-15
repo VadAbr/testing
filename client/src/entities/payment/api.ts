@@ -1,21 +1,7 @@
-import axios from 'axios'
-
-import { apiSlice } from '@shared/api'
+import { apiSlice, axiosInstance } from '@shared/api'
 
 import { ApiPath } from './apiPath'
 import type { CheckResponse, CreateResponse } from './types'
-
-const API_TOKEN =
-  'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiTlRnMU9UYz0iLCJ0eXBlIjoicHJvamVjdCIsInYiOiIyNzA2Yjk0OWViZjNiMzRlNjc2N2Q5ZmZkOGVlMTZhZDc2MzZkYTQ4ZDVkYWNhMTlhNTk4ZTk0MTViZWZlNmM3IiwiZXhwIjo4ODE0OTQ5MTY0N30.wnBhWfhSZXnMcy6wKf1he9HmQOlbD0b1KpAyRlr2eyM'
-const SHOP_ID = 'B85eYXUgZxj2jKx7'
-const TEST_COST = 45
-
-const axiosInstance = axios.create({
-  headers: {
-    'Content-Type': 'application/json',
-    Authorization: `Token ${API_TOKEN}`,
-  },
-})
 
 export const ShopApi = apiSlice.injectEndpoints({
   endpoints: build => ({
@@ -23,11 +9,7 @@ export const ShopApi = apiSlice.injectEndpoints({
       queryFn: async () => {
         try {
           const data = await axiosInstance
-            .post<CreateResponse>(ApiPath.createInvoice, {
-              amount: TEST_COST,
-              shop_id: SHOP_ID,
-              currency: 'USD',
-            })
+            .post<CreateResponse>(ApiPath.createInvoice)
             .then(res => res.data)
 
           return {
@@ -45,7 +27,7 @@ export const ShopApi = apiSlice.injectEndpoints({
         try {
           const data = await axiosInstance
             .post<CheckResponse>(ApiPath.checkInvoice, {
-              uuids: [invoiceId],
+              invoiceId,
             })
             .then(res => res.data)
 
@@ -59,12 +41,32 @@ export const ShopApi = apiSlice.injectEndpoints({
         }
       },
     }),
-    cancelInvoice: build.mutation<any, string>({
+    cancelInvoice: build.mutation<boolean, string>({
       queryFn: async invoiceId => {
         try {
-          const data = await axiosInstance.post(ApiPath.cancelInvoice, {
-            uuid: invoiceId,
-          })
+          const data = await axiosInstance
+            .post<unknown>(ApiPath.cancelInvoice, {
+              invoiceId,
+            })
+            .then(res => res.data)
+
+          return {
+            data: Boolean(data),
+          }
+        } catch (error) {
+          return {
+            error,
+          }
+        }
+      },
+    }),
+
+    getLastPayment: build.query<CreateResponse, void>({
+      queryFn: async () => {
+        try {
+          const data = await axiosInstance
+            .get<CreateResponse>(ApiPath.getLastPayment)
+            .then(res => res.data)
 
           return {
             data,
@@ -72,6 +74,9 @@ export const ShopApi = apiSlice.injectEndpoints({
         } catch (error) {
           return {
             error,
+            meta: {
+              isMessageDisabled: true,
+            },
           }
         }
       },

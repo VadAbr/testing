@@ -6,7 +6,8 @@
       "mainPageLabel": "Главная",
       "testPageLabel": "Тестирование",
       "videosPageLabel": "Видео",
-      "infoPageLabel": "Описание"
+      "infoPageLabel": "Описание",
+      "adminPanel": "Панель админа"
     },
     "404PageContent": {
       "title": "Такой страницы нет",
@@ -272,29 +273,43 @@
       "step3Description": "Это выражается в сбое анализа внешней карьерной среды ({{problems}})",
       "contactToUs": "Связаться с нами"
     },
-    "registrationForm": {
-      "title": "Входная анкета",
+    "authorization": {
       "nameField": "Имя (nickname)",
+      "passwordField": "Пароль",
       "ageField": "Возраст, лет",
       "activityField": "Сфера деятельности",
       "educationField": "Образование",
       "workExperienceField": "Опыт работы",
       "positionField": "Должность",
+      "password": "Пароль",
       "emailField": "Электронная почта",
       "keyQuestionField": "Вас устраивает ваше карьерное развитие",
       "keyQuestionOptions": {
         "options1": "Да",
         "options2": "Нет"
       },
-      "checkbox": "Согласие на обработку данных",
-      "startTest": "Начать тестирование"
+      "checkbox": "Согласие на обработку данных"
+    },
+    "login": {
+      "title": "Логин",
+      "submit": "Войти",
+      "changeToRegistration": "Регистрация",
+      "changeToLogin": "Логин"
+    },
+    "registration": {
+      "title": "Регистрация",
+      "submit": "Создать",
+      "changeToRegistration": "Регистрация",
+      "changeToLogin": "Логин"
     },
     "notification": {
-      "emptyForm": "Заполните все поля"
+      "emptyForm": "Заполните все поля",
+      "someError": "Что-то пошло не так, попробуйте позже"
     },
     "payment": {
       "title": "Остался последний шаг",
-      "description": "После нажатия кнопки оплаты вас перенаправит на соответсвующую страницу. Вернитесь на эту вкладку после успешной оплаты. Не закрывайте эту страницу, иначе мы не узнаем об оплате!",
+      "description": "После нажатия кнопки оплаты вас перенаправит на соответсвующую страницу. Вернитесь на эту вкладку после успешной оплаты",
+      "oldPayment": "Найден платеж ожидающий оплаты, вы можете оплатить его или отменить и начать сначала",
       "cancelBtn": "Отменить оплату",
       "payBtn": "Оплатить"
     }

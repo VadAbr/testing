@@ -1,2 +1,2 @@
 export { RegistrationFormSlice } from './model'
-export { RegistrationForm } from './ui'
+export { LoginForm, LoginOrRegistrForm, LoginOrRegistrModal, RegistrationForm } from './ui'

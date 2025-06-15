@@ -9,7 +9,6 @@ import { IconTie } from '@consta/icons/IconTie'
 import { IconUser } from '@consta/icons/IconUser'
 import { IconWatchStroked } from '@consta/icons/IconWatchStroked'
 import { Button } from '@consta/uikit/Button'
-import { Card } from '@consta/uikit/Card'
 import { Checkbox } from '@consta/uikit/Checkbox'
 import type { SelectItemDefault } from '@consta/uikit/Select'
 import { Select } from '@consta/uikit/Select'
@@ -26,23 +25,37 @@ import styles from './styles.css'
 
 const OPTIONS: SelectItemDefault[] = [
   {
-    label: 'registrationForm.keyQuestionOptions.options1',
+    label: 'authorization.keyQuestionOptions.options1',
     id: 1,
   },
   {
-    label: 'registrationForm.keyQuestionOptions.options2',
+    label: 'authorization.keyQuestionOptions.options2',
     id: 2,
   },
 ]
 
-export const RegistrationForm = () => {
+type Props = {
+  onRegister?: () => void
+}
+
+export const RegistrationForm = ({ onRegister }: Props) => {
   const form = useSelector(RegistrationFormSlice.selectors.getForm)
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
+  const [isLoading, setIsLoading] = React.useState(false)
 
-  const startTest = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const submit = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setIsLoading(true)
     e.preventDefault()
     dispatch(submitForm())
+      .unwrap()
+      .then(() => {
+        onRegister?.()
+      })
+      .catch(console.error)
+      .finally(() => {
+        setIsLoading(false)
+      })
   }
 
   const changeName = (value: string | null) => {
@@ -50,7 +63,7 @@ export const RegistrationForm = () => {
   }
 
   const changeAge = (value: string | null) => {
-    dispatch(RegistrationFormSlice.actions.changeField({ age: value ?? '' }))
+    dispatch(RegistrationFormSlice.actions.changeField({ age: parseInt(value ?? '', 10) }))
   }
 
   const changeActivityField = (value: string | null) => {
@@ -62,7 +75,9 @@ export const RegistrationForm = () => {
   }
 
   const changeWorkExperience = (value: string | null) => {
-    dispatch(RegistrationFormSlice.actions.changeField({ workExperience: value ?? '' }))
+    dispatch(
+      RegistrationFormSlice.actions.changeField({ workExperience: parseInt(value ?? '', 10) }),
+    )
   }
 
   const changePosition = (value: string | null) => {
@@ -81,24 +96,68 @@ export const RegistrationForm = () => {
     dispatch(RegistrationFormSlice.actions.changeField({ isChecked: !form.isChecked }))
   }
 
+  const changePassword = (value: string | null) => {
+    dispatch(RegistrationFormSlice.actions.changeField({ password: value ?? '' }))
+  }
+
   return (
-    <Card className={styles.container} form="round">
+    <div>
       <Text weight="semibold" size="3xl" align="center">
-        {t('registrationForm.title')}
+        {t('registration.title')}
       </Text>
 
-      <form id="registrationForm" className={styles.form}>
+      <form autoComplete="off" id="authorization" className={styles.form}>
         <div className={styles.row}>
           <TextField
-            label={t('registrationForm.nameField')}
+            label={t('authorization.nameField')}
+            disabled={isLoading}
             value={form.name}
             autoFocus={true}
             leftSide={IconUser}
             onChange={changeName}
           />
+
           <TextField
-            label={t('registrationForm.ageField')}
-            value={form.age}
+            autoComplete="new-password"
+            disabled={isLoading}
+            label={t('authorization.password')}
+            value={form.password}
+            type="password"
+            onChange={changePassword}
+          />
+        </div>
+
+        <div className={styles.row}>
+          <TextField
+            label={t('authorization.activityField')}
+            disabled={isLoading}
+            value={form.activityField}
+            leftSide={IconLithologyStroked}
+            onChange={changeActivityField}
+          />
+          <TextField
+            label={t('authorization.educationField')}
+            value={form.education}
+            disabled={isLoading}
+            leftSide={IconRUO}
+            onChange={changeEducation}
+          />
+        </div>
+
+        <div className={styles.row}>
+          <TextField
+            label={t('authorization.workExperienceField')}
+            disabled={isLoading}
+            type="number"
+            value={String(form.workExperience)}
+            leftSide={IconBag}
+            onChange={changeWorkExperience}
+          />
+
+          <TextField
+            label={t('authorization.ageField')}
+            value={String(form.age)}
+            disabled={isLoading}
             type="number"
             min={0}
             leftSide={IconWatchStroked}
@@ -108,43 +167,16 @@ export const RegistrationForm = () => {
 
         <div className={styles.row}>
           <TextField
-            label={t('registrationForm.activityField')}
-            value={form.activityField}
-            leftSide={IconLithologyStroked}
-            onChange={changeActivityField}
-          />
-          <TextField
-            label={t('registrationForm.educationField')}
-            value={form.education}
-            leftSide={IconRUO}
-            onChange={changeEducation}
-          />
-        </div>
-
-        <div className={styles.row}>
-          <TextField
-            label={t('registrationForm.workExperienceField')}
-            value={form.workExperience}
-            leftSide={IconBag}
-            onChange={changeWorkExperience}
-          />
-          <TextField
-            label={t('registrationForm.positionField')}
-            value={form.position}
-            leftSide={IconTie}
-            onChange={changePosition}
-          />
-        </div>
-
-        <div className={styles.row}>
-          <TextField
-            label={t('registrationForm.emailField')}
+            disabled={isLoading}
+            autoComplete="off"
+            label={t('authorization.emailField')}
             value={form.email}
             leftSide={IconMail}
             onChange={changeEmail}
           />
           <Select
-            label={t('registrationForm.keyQuestionField')}
+            label={t('authorization.keyQuestionField')}
+            disabled={isLoading}
             items={OPTIONS}
             value={form.keyQuestionField}
             getItemLabel={item => t(item.label)}
@@ -152,22 +184,32 @@ export const RegistrationForm = () => {
           />
         </div>
 
+        <TextField
+          label={t('authorization.positionField')}
+          disabled={isLoading}
+          value={form.position}
+          leftSide={IconTie}
+          onChange={changePosition}
+        />
+
         <div className={cn(styles.row, styles.footer)}>
           <Checkbox
+            disabled={isLoading}
             style={{ display: 'flex' }}
-            label={t('registrationForm.checkbox')}
+            label={t('authorization.checkbox')}
             checked={form.isChecked}
             onChange={changeCheckbox()}
           />
 
           <Button
             type="submit"
-            label={t('registrationForm.startTest')}
-            disabled={!form.isChecked}
-            onClick={startTest}
+            label={t('registration.submit')}
+            loading={isLoading}
+            disabled={!form.isChecked || isLoading}
+            onClick={submit}
           />
         </div>
       </form>
-    </Card>
+    </div>
   )
 }
