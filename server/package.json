@@ -1,12 +1,12 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "main": "api/index.ts",
+  "main": "src/index.ts",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch api/index.ts",
+    "dev": "tsx watch src/index.ts",
     "build": "tsc",
-    "start": "node api/index.js",
+    "start": "node src/index.js",
     "lint": "eslint . --ext .ts",
     "format": "prettier --write ."
   },

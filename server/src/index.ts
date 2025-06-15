@@ -2,11 +2,11 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
-import { connectDB } from '../src/config';
-import authRoutes from '../src/routes/auth';
-import emailRoutes from '../src/routes/email';
-import payRoutes from '../src/routes/pay';
-import testRoutes from '../src/routes/test';
+import { connectDB } from './config';
+import authRoutes from './routes/auth';
+import emailRoutes from './routes/email';
+import payRoutes from './routes/pay';
+import testRoutes from './routes/test';
 
 dotenv.config();
 const app = express();
