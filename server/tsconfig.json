@@ -4,9 +4,9 @@
     "module": "ESNext",
     "moduleResolution": "bundler",
     "esModuleInterop": true,
-    "rootDir": "api",
+    "rootDir": ".",
     "outDir": "dist",
     "strict": true
   },
-  "include": ["api"]
+  "include": ["api", "src"]
 }
