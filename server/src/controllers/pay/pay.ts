@@ -1,6 +1,6 @@
 import { RequestHandler } from 'express';
 import axios from 'axios';
-import { CreateResponse, CheckResponse } from './types.ts';
+import { CreateResponse, CheckResponse } from './types';
 import { getPaymentCollection, getTestCollection } from '../../models';
 import { randomUUID } from 'node:crypto';
 

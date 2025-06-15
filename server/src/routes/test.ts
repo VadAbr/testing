@@ -5,9 +5,9 @@ import {
   currentTest,
   getAllTests,
   createTest,
-} from '../controllers/test.ts';
-import { authenticate } from '../middlewares/auth.ts';
-import { isAdmin } from '../middlewares/isAdmin.ts';
+} from '../controllers/test';
+import { authenticate } from '../middlewares/auth';
+import { isAdmin } from '../middlewares/isAdmin';
 
 const router = Router();
 
