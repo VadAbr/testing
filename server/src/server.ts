@@ -15,6 +15,10 @@ app.use(cors());
 
 connectDB();
 
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
+
 app.use('/api/auth', authRoutes);
 app.use('/api/email', emailRoutes);
 app.use('/api/payment', payRoutes);
