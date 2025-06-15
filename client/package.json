@@ -9,10 +9,10 @@
     ]
   },
   "scripts": {
-    "start:dev": "webpack serve --config webpack/dev.config.js",
-    "start:prod": "webpack serve --config webpack/prod.config.js",
-    "build:dev": "webpack --config webpack/dev.config.js",
-    "build:prod": "webpack --config webpack/prod.config.js",
+    "start:dev": "webpack serve --config webpackConfig/dev.config.js",
+    "start:prod": "webpack serve --config webpackConfig/prod.config.js",
+    "build:dev": "webpack --config webpackConfig/dev.config.js",
+    "build:prod": "webpack --config webpackConfig/prod.config.js",
     "vercel-build": "npm run build:prod",
     "lint": "npm run lint:code && npm run lint:style",
     "lint:code": "eslint src -c eslint.config.mjs --quiet --color --cache --cache-location .cache/.eslintcache",
@@ -31,6 +31,8 @@
     "@types/react-dom": "^19.1.3",
     "@types/react-redux": "^7.1.34",
     "css-loader": "^6.8.1",
+    "dotenv": "^16.5.0",
+    "dotenv-webpack": "^8.1.0",
     "eslint": "^9.18.0",
     "eslint-config-prettier": "^10.0.1",
     "eslint-import-resolver-alias": "^1.1.2",

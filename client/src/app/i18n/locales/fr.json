@@ -272,29 +272,43 @@
       "step3Description": "Cela se traduit par l'échec de l'analyse de l'environnement professionnel externe ({{problems}}).",
       "contactToUs": "Contactez nous"
     },
-    "registrationForm": {
-      "title": "Formulaire d'entrée",
-      "nameField": "Nom (pseudo)",
-      "ageField": "Âge (ans)",
+    "authorization": {
+      "nameField": "Nom (surnom)",
+      "passwordField": "Mot de passe",
+      "ageField": "Âge, années",
       "activityField": "Domaine d'activité",
       "educationField": "Éducation",
       "workExperienceField": "Expérience professionnelle",
       "positionField": "Poste",
-      "emailField": "E-mail",
-      "keyQuestionField": "Êtes-vous satisfait de votre évolution professionnelle ",
+      "password": "Mot de passe",
+      "emailField": "Adresse e-mail",
+      "keyQuestionField": "Êtes-vous satisfait de votre développement de carrière ?",
       "keyQuestionOptions": {
         "options1": "Oui",
         "options2": "Non"
       },
-      "checkbox": "Consentement au traitement des données",
-      "startTest": "Commencer le test"
+      "checkbox": "Consentement au traitement des données"
+    },
+    "login": {
+      "title": "Connexion",
+      "submit": "Se connecter",
+      "changeToRegistration": "Inscription",
+      "changeToLogin": "Connexion"
+    },
+    "registration": {
+      "title": "Inscription",
+      "submit": "Créer",
+      "changeToRegistration": "Inscription",
+      "changeToLogin": "Connexion"
     },
     "notification": {
-      "emptyForm": "Remplissez tous les champs"
+      "emptyForm": "Veuillez remplir tous les champs",
+      "someError": "Something went wrong, please try again later"
     },
     "payment": {
-      "title": "Dernière étape restante",
-      "description": "Après avoir cliqué sur le bouton de paiement, vous serez redirigé vers la page correspondante. Revenez à cet onglet après avoir effectué le paiement. Ne fermez pas cette page, sinon nous n'aurons pas connaissance du paiement !",
+      "title": "Dernière étape",
+      "description": "Après avoir cliqué sur le bouton de paiement, vous serez redirigé vers la page correspondante. Revenez sur cet onglet après un paiement réussi",
+      "oldPayment": "Un paiement en attente a été trouvé. Vous pouvez le compléter ou l'annuler et recommencer",
       "cancelBtn": "Annuler le paiement",
       "payBtn": "Payer"
     }

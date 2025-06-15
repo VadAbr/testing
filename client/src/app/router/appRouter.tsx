@@ -1,6 +1,7 @@
 import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 
+import { AdminPanel } from '@pages/adminPanel'
 import { InfoPage } from '@pages/info'
 import { MainPage } from '@pages/main'
 import { NotFoundPage } from '@pages/notFound'
@@ -38,6 +39,10 @@ export const routes: TRouteObjectWithMeta[] = [
       {
         path: PATHS.testResult,
         element: <TestResultsPage />,
+      },
+      {
+        path: PATHS.adminPanel,
+        element: <AdminPanel />,
       },
     ],
   },

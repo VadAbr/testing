@@ -1,0 +1,6 @@
+.popover {
+    padding: 0.8rem;
+    background-color: var(--color-bg-default);
+    border: 0.1rem solid var(--border-color);
+    border-radius: 0.4rem;
+}

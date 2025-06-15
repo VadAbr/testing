@@ -272,30 +272,44 @@
       "step3Description": "Dies äußert sich im Versagen bei der Analyse des externen beruflichen Umfelds ({{problems}})",
       "contactToUs": "Kontakt"
     },
-    "registrationForm": {
-      "title": "Anmeldeformular",
-      "nameField": "Name (Pseudonym)",
-      "ageField": "Alter (Jahre)",
+    "authorization": {
+      "nameField": "Name (Spitzname)",
+      "passwordField": "Passwort",
+      "ageField": "Alter, Jahre",
       "activityField": "Tätigkeitsbereich",
-      "educationField": "Bildung",
+      "educationField": "Ausbildung",
       "workExperienceField": "Berufserfahrung",
       "positionField": "Position",
+      "password": "Passwort",
       "emailField": "E-Mail",
-      "keyQuestionField": "Sind Sie mit Ihrer Karriereentwicklung zufrieden",
+      "keyQuestionField": "Sind Sie mit Ihrer beruflichen Entwicklung zufrieden?",
       "keyQuestionOptions": {
         "options1": "Ja",
         "options2": "Nein"
       },
-      "checkbox": "Einwilligung zur Datenverarbeitung",
-      "startTest": "Test starten"
+      "checkbox": "Einwilligung zur Datenverarbeitung"
+    },
+    "login": {
+      "title": "Anmeldung",
+      "submit": "Einloggen",
+      "changeToRegistration": "Registrierung",
+      "changeToLogin": "Anmeldung"
+    },
+    "registration": {
+      "title": "Registrierung",
+      "submit": "Erstellen",
+      "changeToRegistration": "Registrierung",
+      "changeToLogin": "Anmeldung"
     },
     "notification": {
-      "emptyForm": "Bitte alle Felder ausfüllen"
+      "emptyForm": "Bitte füllen Sie alle Felder aus",
+      "someError": "Something went wrong, please try again later"
     },
     "payment": {
-      "title": "There's one last step left",
-      "description": "Nach dem Anklicken des Zahlungsbuttons werden Sie auf die entsprechende Seite weitergeleitet. Kehren Sie nach erfolgreicher Zahlung zu dieser Seite zurück. Schließen Sie diese Seite nicht, da wir sonst nichts von der Zahlung erfahren!",
-      "cancelBtn": "Annullierung der Zahlung",
+      "title": "Nur noch ein letzter Schritt",
+      "description": "Nach dem Klicken auf die Zahlungsschaltfläche werden Sie zur entsprechenden Seite weitergeleitet. Kehren Sie nach erfolgreicher Zahlung zu diesem Tab zurück",
+      "oldPayment": "Eine ausstehende Zahlung wurde gefunden. Sie können sie abschließen oder abbrechen und von vorne beginnen",
+      "cancelBtn": "Zahlung abbrechen",
       "payBtn": "Bezahlen"
     }
   }

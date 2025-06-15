@@ -272,31 +272,45 @@
       "step3Description": "Esto se manifiesta en la falta de análisis del entorno externo de la carrera ({{problems}})",
       "contactToUs": "Contáctenos"
     },
-    "registrationForm": {
-      "title": "Formulario de entrada",
-      "nameField": "Nombre (seudónimo)",
+    "authorization": {
+      "nameField": "Nombre (apodo)",
+      "passwordField": "Contraseña",
       "ageField": "Edad, años",
       "activityField": "Área de actividad",
-      "educationField": "Formación académica",
+      "educationField": "Educación",
       "workExperienceField": "Experiencia laboral",
-      "positionField": "Cargo",
+      "positionField": "Puesto",
+      "password": "Contraseña",
       "emailField": "Correo electrónico",
-      "keyQuestionField": "¿Está satisfecho con su desarrollo profesional",
+      "keyQuestionField": "¿Está satisfecho con su desarrollo profesional?",
       "keyQuestionOptions": {
         "options1": "Sí",
         "options2": "No"
       },
-      "checkbox": "Consentimiento para procesar datos",
-      "startTest": "Comenzar prueba"
+      "checkbox": "Consentimiento para el tratamiento de datos"
+    },
+    "login": {
+      "title": "Inicio de sesión",
+      "submit": "Iniciar sesión",
+      "changeToRegistration": "Registrarse",
+      "changeToLogin": "Iniciar sesión"
+    },
+    "registration": {
+      "title": "Registro",
+      "submit": "Crear",
+      "changeToRegistration": "Registrarse",
+      "changeToLogin": "Iniciar sesión"
     },
     "notification": {
-      "emptyForm": "Complete todos los campos"
+      "emptyForm": "Por favor, complete todos los campos",
+      "someError": "Something went wrong, please try again later"
     },
     "payment": {
-      "title": "Último paso",
-      "description": "Después de pulsar el botón de pago será redirigido a la página correspondiente. Vuelva a esta pestaña después de realizar el pago correctamente. No cierre esta página, de lo contrario no sabremos nada del pago.",
-      "cancelBtn": "Cancelar el pago",
-      "payBtn": "Pagar a"
+      "title": "Solo falta un paso",
+      "description": "Después de hacer clic en el botón de pago, será redirigido a la página correspondiente. Vuelva a esta pestaña después de completar el pago",
+      "oldPayment": "Se encontró un pago pendiente. Puede completarlo o cancelarlo y comenzar de nuevo",
+      "cancelBtn": "Cancelar pago",
+      "payBtn": "Pagar"
     }
   }
 }

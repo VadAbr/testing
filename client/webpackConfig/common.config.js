@@ -1,4 +1,5 @@
 const path = require('path')
+const Dotenv = require('dotenv-webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const BUILD_DIR = path.resolve(__dirname, '..', 'build')
@@ -12,12 +13,17 @@ const FEATURES_DIR = path.resolve(SRC_DIR, 'features')
 const ENTITIES_DIR = path.resolve(SRC_DIR, 'entities')
 const SHARED_DIR = path.resolve(SRC_DIR, 'shared')
 
-const SERVER_URL = 'http://localhost:8085'
+const SERVER_URL = 'http://localhost:3000'
 
 const plugins = [
   new HtmlWebpackPlugin({
     template: path.join(PUBLIC_DIR, 'index.html'),
     filename: 'index.html',
+  }),
+  new Dotenv({
+    path: './.env', // (опционально) путь до .env файла
+    systemvars: true, // использовать переменные из system environment тоже (например, при deploy)
+    allowEmptyValues: true, // разрешить пустые значения
   }),
 ]
 
