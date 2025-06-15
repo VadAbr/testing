@@ -10,6 +10,6 @@
     {
       "src": "/api/(.*)",
       "dest": "dist/server.js"
-    },
+    }
   ]
 }
