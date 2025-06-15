@@ -32,6 +32,7 @@ export const LoginBtn = () => {
   const exit = () => {
     dispatch(logout())
     dispatch(apiSlice.util.resetApiState())
+    setShowUserPopover(false)
   }
 
   if (!user) {

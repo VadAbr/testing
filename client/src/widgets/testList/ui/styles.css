@@ -1,0 +1,27 @@
+.card {
+    padding: 2.5rem;
+}
+
+.card:not(:last-child) {
+    margin-bottom: 1.5rem;
+}
+
+.card > *:not(:last-child) {
+    margin-bottom: 0.5rem;
+}
+
+.modalWrapper {
+    width: 90rem;
+    max-width: 100%;
+    padding: 2.5rem;
+}
+
+.testResult {
+    margin-top: 2rem;
+}
+
+.mainInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}

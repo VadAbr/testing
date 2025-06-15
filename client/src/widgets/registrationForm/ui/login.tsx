@@ -38,6 +38,7 @@ export const LoginForm = ({ onLogin }: Props) => {
       .then(() => {
         onLogin?.()
       })
+      .catch(console.error)
   }
 
   return (
@@ -49,7 +50,7 @@ export const LoginForm = ({ onLogin }: Props) => {
       <form autoComplete="off" id="registrationForm" className={styles.form}>
         <div className={styles.row}>
           <TextField
-            label={t('registrationForm.emailField')}
+            label={t('authorization.emailField')}
             value={form.email}
             autoComplete="off"
             autoFocus={true}
@@ -58,7 +59,7 @@ export const LoginForm = ({ onLogin }: Props) => {
           />
           <TextField
             autoComplete="new-password"
-            label={t('registrationForm.password')}
+            label={t('authorization.password')}
             value={form.password}
             type="password"
             onChange={changePassword}
@@ -68,7 +69,7 @@ export const LoginForm = ({ onLogin }: Props) => {
         <div className={cnMixFlex({ justify: 'flex-end' })}>
           <Button
             type="submit"
-            label={t('registrationForm.login')}
+            label={t('login.submit')}
             loading={isLoading}
             disabled={!form.email.trim() || !form.password.trim() || isLoading}
             onClick={submit}

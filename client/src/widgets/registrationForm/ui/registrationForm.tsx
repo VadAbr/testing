@@ -25,11 +25,11 @@ import styles from './styles.css'
 
 const OPTIONS: SelectItemDefault[] = [
   {
-    label: 'registrationForm.keyQuestionOptions.options1',
+    label: 'authorization.keyQuestionOptions.options1',
     id: 1,
   },
   {
-    label: 'registrationForm.keyQuestionOptions.options2',
+    label: 'authorization.keyQuestionOptions.options2',
     id: 2,
   },
 ]
@@ -103,13 +103,13 @@ export const RegistrationForm = ({ onRegister }: Props) => {
   return (
     <div>
       <Text weight="semibold" size="3xl" align="center">
-        {t('registrationForm.title')}
+        {t('registration.title')}
       </Text>
 
-      <form autoComplete="off" id="registrationForm" className={styles.form}>
+      <form autoComplete="off" id="authorization" className={styles.form}>
         <div className={styles.row}>
           <TextField
-            label={t('registrationForm.nameField')}
+            label={t('authorization.nameField')}
             disabled={isLoading}
             value={form.name}
             autoFocus={true}
@@ -120,7 +120,7 @@ export const RegistrationForm = ({ onRegister }: Props) => {
           <TextField
             autoComplete="new-password"
             disabled={isLoading}
-            label={t('registrationForm.password')}
+            label={t('authorization.password')}
             value={form.password}
             type="password"
             onChange={changePassword}
@@ -129,14 +129,14 @@ export const RegistrationForm = ({ onRegister }: Props) => {
 
         <div className={styles.row}>
           <TextField
-            label={t('registrationForm.activityField')}
+            label={t('authorization.activityField')}
             disabled={isLoading}
             value={form.activityField}
             leftSide={IconLithologyStroked}
             onChange={changeActivityField}
           />
           <TextField
-            label={t('registrationForm.educationField')}
+            label={t('authorization.educationField')}
             value={form.education}
             disabled={isLoading}
             leftSide={IconRUO}
@@ -146,15 +146,16 @@ export const RegistrationForm = ({ onRegister }: Props) => {
 
         <div className={styles.row}>
           <TextField
-            label={t('registrationForm.workExperienceField')}
+            label={t('authorization.workExperienceField')}
             disabled={isLoading}
+            type="number"
             value={String(form.workExperience)}
             leftSide={IconBag}
             onChange={changeWorkExperience}
           />
 
           <TextField
-            label={t('registrationForm.ageField')}
+            label={t('authorization.ageField')}
             value={String(form.age)}
             disabled={isLoading}
             type="number"
@@ -168,13 +169,13 @@ export const RegistrationForm = ({ onRegister }: Props) => {
           <TextField
             disabled={isLoading}
             autoComplete="off"
-            label={t('registrationForm.emailField')}
+            label={t('authorization.emailField')}
             value={form.email}
             leftSide={IconMail}
             onChange={changeEmail}
           />
           <Select
-            label={t('registrationForm.keyQuestionField')}
+            label={t('authorization.keyQuestionField')}
             disabled={isLoading}
             items={OPTIONS}
             value={form.keyQuestionField}
@@ -184,7 +185,7 @@ export const RegistrationForm = ({ onRegister }: Props) => {
         </div>
 
         <TextField
-          label={t('registrationForm.positionField')}
+          label={t('authorization.positionField')}
           disabled={isLoading}
           value={form.position}
           leftSide={IconTie}
@@ -195,14 +196,14 @@ export const RegistrationForm = ({ onRegister }: Props) => {
           <Checkbox
             disabled={isLoading}
             style={{ display: 'flex' }}
-            label={t('registrationForm.checkbox')}
+            label={t('authorization.checkbox')}
             checked={form.isChecked}
             onChange={changeCheckbox()}
           />
 
           <Button
             type="submit"
-            label={t('registrationForm.register')}
+            label={t('registration.submit')}
             loading={isLoading}
             disabled={!form.isChecked || isLoading}
             onClick={submit}

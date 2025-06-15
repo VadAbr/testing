@@ -272,31 +272,45 @@
       "step3Description": "Questo si esprime nell'incapacità di analizzare l'ambiente di carriera esterno ({{problems}})",
       "contactToUs": "Contattateci"
     },
-    "registrationForm": {
-      "title": "Modulo di registrazione",
+    "authorization": {
       "nameField": "Nome (nickname)",
+      "passwordField": "Password",
       "ageField": "Età, anni",
-      "activityField": "Settore",
+      "activityField": "Settore di attività",
       "educationField": "Istruzione",
       "workExperienceField": "Esperienza lavorativa",
       "positionField": "Posizione",
+      "password": "Password",
       "emailField": "Email",
-      "keyQuestionField": "Sei soddisfatto della tua carriera",
+      "keyQuestionField": "Sei soddisfatto del tuo sviluppo professionale?",
       "keyQuestionOptions": {
         "options1": "Sì",
         "options2": "No"
       },
-      "checkbox": "Consenso al trattamento dei dati",
-      "startTest": "Inizia il test"
+      "checkbox": "Consenso al trattamento dei dati"
+    },
+    "login": {
+      "title": "Accesso",
+      "submit": "Accedi",
+      "changeToRegistration": "Registrati",
+      "changeToLogin": "Accesso"
+    },
+    "registration": {
+      "title": "Registrazione",
+      "submit": "Crea",
+      "changeToRegistration": "Registrati",
+      "changeToLogin": "Accesso"
     },
     "notification": {
-      "emptyForm": "Compila tutti i campi"
+      "emptyForm": "Compila tutti i campi",
+      "someError": "Something went wrong, please try again later"
     },
     "payment": {
-      "title": "Ultimo passo rimasto",
-      "description": "Dopo aver fatto clic sul pulsante di pagamento, si verrà reindirizzati alla pagina corrispondente. Tornare a questa scheda dopo aver effettuato il pagamento. Non chiudete questa pagina, altrimenti non sapremo dell'avvenuto pagamento!",
-      "cancelBtn": "Annullamento del pagamento",
-      "payBtn": "Pagamento"
+      "title": "Manca solo un ultimo passaggio",
+      "description": "Dopo aver cliccato sul pulsante di pagamento, verrai reindirizzato alla pagina corrispondente. Torna a questa scheda dopo il pagamento riuscito",
+      "oldPayment": "È stato trovato un pagamento in sospeso. Puoi completarlo oppure annullarlo e ricominciare",
+      "cancelBtn": "Annulla pagamento",
+      "payBtn": "Paga"
     }
   }
 }

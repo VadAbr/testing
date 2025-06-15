@@ -6,6 +6,7 @@ import { Tabs } from '@consta/uikit/Tabs'
 import { LanguageSwitch } from '@features/languageSwitch'
 import { LoginBtn } from '@features/loginBtn'
 import { PATHS } from '@shared/constants'
+import { useUserInfo } from '@shared/store'
 import { Toolbar } from '@shared/ui'
 
 import styles from './styles.css'
@@ -21,8 +22,6 @@ export const Header = () => {
 }
 
 const Right = () => {
-  const { t } = useTranslation()
-
   return (
     <div className={styles.right}>
       <LanguageSwitch />
@@ -43,11 +42,16 @@ const ITEMS: TabItem[] = [
   { path: PATHS.test, label: 'testPageLabel' },
 ]
 
+const ADMIN_ITEMS: TabItem[] = [{ path: PATHS.adminPanel, label: 'adminPanel' }]
+
 const Left = () => {
   const [isHidden, setIsHidden] = useState(false)
   const { t, i18n } = useTranslation()
   const { pathname } = useLocation()
   const navigate = useNavigate()
+  const { isAdmin } = useUserInfo()
+
+  const routes = isAdmin ? [...ITEMS, ...ADMIN_ITEMS] : ITEMS
 
   useEffect(() => {
     // искусственно анмаунтим табы для корректного ререндера с новым текстом
@@ -61,7 +65,7 @@ const Left = () => {
     }
   }, [i18n.language])
 
-  const value = ITEMS.find(el => el.path === pathname)
+  const value = routes.find(el => el.path === pathname)
 
   const onClick = (item: TabItem) => {
     navigate(item.path)
@@ -75,7 +79,7 @@ const Left = () => {
     <Tabs
       className={styles.menu}
       view="clear"
-      items={ITEMS}
+      items={routes}
       value={value}
       getItemLabel={item => t(`navigation.${item.label}`)}
       onChange={onClick}

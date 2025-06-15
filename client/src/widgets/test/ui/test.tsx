@@ -30,16 +30,22 @@ const QUESTION_COMPONENTS: Record<QuestionItem['type'], (args: Props) => React.R
 }
 
 export const Test = () => {
+  const [isLoading, setIsLoading] = React.useState(false)
   const questions = useSelector(TestSlice.selectors.getQuestions)
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
 
   const finish = () => {
+    setIsLoading(true)
     dispatch(calculateTestResult())
       .unwrap()
       .then(() => {
         navigate(PATHS.testResult)
+      })
+      .catch(console.error)
+      .finally(() => {
+        setIsLoading(false)
       })
   }
 
@@ -49,6 +55,7 @@ export const Test = () => {
         {questions.map(renderQuestion)}
         <div className={buttonWrapper}>
           <Button
+            loading={isLoading}
             label={t('test.submit')}
             view="primary"
             form="round"

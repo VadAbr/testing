@@ -27,8 +27,12 @@ export const register: RequestHandler = async (req, res) => {
     isSatisfied,
   });
 
-  const token = generateToken({ id, name, email });
-  res.json({ token });
+  const token = generateToken({ id, password: hashed });
+  res.json({
+    token,
+    isAdmin: false,
+    userInfo: { name: name, id: id, email: email },
+  });
 };
 
 export const login: RequestHandler = async (req, res) => {
@@ -47,6 +51,30 @@ export const login: RequestHandler = async (req, res) => {
     return;
   }
 
-  const token = generateToken({ id: user.id, name: user.name, email: user.email });
-  res.json({ token, isAdmin: user.isAdmin });
+  const token = generateToken({ id: user.id, password: user.password });
+  res.json({
+    token,
+    isAdmin: user.isAdmin,
+    userInfo: { name: user.name, id: user.id, email: user.email },
+  });
+};
+
+export const tryAuth: RequestHandler = async (req, res) => {
+  const id = req.user?.id;
+  const password = req.user?.password;
+
+  const users = getUserCollection();
+  const user = await users.findOne({ id });
+
+  if (!user || !password) {
+    res.status(401).json({ message: 'Invalid credentials' });
+    return;
+  }
+
+  const token = generateToken({ id: user.id, password: user.password });
+  res.json({
+    token,
+    isAdmin: user.isAdmin,
+    userInfo: { name: user.name, id: user.id, email: user.email },
+  });
 };

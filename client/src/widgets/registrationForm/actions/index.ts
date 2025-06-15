@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit'
 
-import { addNotification } from '@shared/store'
+import { addNotification, AuthApi } from '@shared/store'
 
 import { RegistrationFormSlice } from '../model'
 
@@ -16,8 +16,8 @@ export const submitForm = createAsyncThunk(
       throw new Error('Form is invalid')
     }
 
-    //Добавить регистрация
-
-    dispatch(RegistrationFormSlice.actions.setStep('payment'))
+    dispatch(
+      AuthApi.endpoints.register.initiate({ ...form, isSatisfied: Boolean(form.keyQuestionField) }),
+    )
   },
 )
