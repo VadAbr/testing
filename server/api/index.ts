@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-connectDB();
+// connectDB();
 
 app.get('/', (req, res) => {
   res.send('Server is running');
