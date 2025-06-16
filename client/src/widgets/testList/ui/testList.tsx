@@ -58,7 +58,8 @@ export const TestList = ({ tests }: Props) => {
 
   const filteredTests = useMemo(() => {
     const filtered = tests.filter(test => {
-      if (filterUser && !test.user.name.toLowerCase().includes(filterUser.toLowerCase())) {
+      const userFilterValue = (test.user?.name ?? (test.userId || '')).toLowerCase()
+      if (filterUser && !userFilterValue.includes(filterUser.toLowerCase())) {
         return false
       }
       if (filterStatus.id !== 'all' && test.status !== filterStatus.id) return false

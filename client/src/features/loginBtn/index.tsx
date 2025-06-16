@@ -9,13 +9,14 @@ import { User } from '@consta/uikit/User'
 
 import { apiSlice } from '@shared/api'
 import { useAppDispatch } from '@shared/hooks'
-import { AuthSlice, logout } from '@shared/store'
+import { AuthApi, AuthSlice, logout } from '@shared/store'
 
 import styles from './styles.css'
 
 export const LoginBtn = () => {
   const [showUserPopover, setShowUserPopover] = useState(false)
   const userInfoRef = useRef<HTMLDivElement | null>(null)
+  const { isLoading } = AuthApi.useTryAuthQuery(undefined)
 
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
@@ -40,6 +41,7 @@ export const LoginBtn = () => {
       <Button
         label={t('navigation.login')}
         form="round"
+        loading={isLoading}
         view="secondary"
         iconRight={IconIntroduction}
         onClick={openAuthModal}

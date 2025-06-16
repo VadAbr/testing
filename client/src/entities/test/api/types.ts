@@ -6,7 +6,7 @@ export type GetTestResponse = string
 export type GetAllTestsResponse = {
   id: string
   result?: TestResult
-  user: User
+  user?: User
   userId: string
   status: 'success' | 'pending'
   isAskedForHelp?: boolean

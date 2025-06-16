@@ -1,9 +1,9 @@
-import React, { useEffect, useLayoutEffect } from 'react'
+import React, { useLayoutEffect } from 'react'
 import { useSelector } from 'react-redux'
 import { Loader } from '@consta/uikit/Loader'
 
 import { TestApi } from '@entities/test'
-import { AuthSlice, useUserInfo } from '@shared/store'
+import { AuthSlice } from '@shared/store'
 import { PageContent } from '@shared/ui'
 import { PaymentForm } from '@widgets/paymentForm'
 import { LoginOrRegistrForm } from '@widgets/registrationForm'
@@ -14,9 +14,8 @@ import styles from './styles.css'
 export const TestPage = () => {
   const [activeStep, setActiveStep] = React.useState<'form' | 'payment' | 'test'>('form')
   const user = useSelector(AuthSlice.selectors.getUser)
-  const { isAdmin } = useUserInfo()
 
-  const { data, isFetching } = TestApi.useGetCurrentTestQuery(undefined, {
+  const { data, isFetching, isError } = TestApi.useGetCurrentTestQuery(undefined, {
     refetchOnMountOrArgChange: true,
   })
 
@@ -26,14 +25,16 @@ export const TestPage = () => {
       return
     }
 
-    if (!data) {
+    if (isError) {
       setActiveStep('payment')
+      return
     }
 
     if (data) {
       setActiveStep('test')
+      return
     }
-  }, [data, user])
+  }, [data, user, isError])
 
   if (isFetching) {
     return (

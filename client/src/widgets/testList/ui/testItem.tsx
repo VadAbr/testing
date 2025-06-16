@@ -34,7 +34,7 @@ export const TestItem = ({ item, selectedId, onClick }: Props) => {
         onClick(item.id)
       }}>
       <Text>Тест ID: {item.id}</Text>
-      <Text>Пользователь: {item.user.name}</Text>
+      <Text>Пользователь: {item.user?.name ?? (item.userId || '-')}</Text>
       <StatusBadge status={item.status} />
       <HelpBadge isAskedForHelp={item.isAskedForHelp ?? false} />
       <Text>Время: {formatted.format(new Date(item.createdAt))}</Text>
