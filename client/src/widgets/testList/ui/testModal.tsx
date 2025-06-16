@@ -79,8 +79,8 @@ export const TestModal = ({ isOpen, test, onClose }: Props) => {
           </Text>
 
           <div className={styles.mainInfo}>
-            <Text>Пользователь: {test.user.name}</Text>
-            <Text view="link">Почта: {test.user.email}</Text>
+            <Text>Пользователь: {test.user?.name || test.userId}</Text>
+            <Text view="link">Почта: {test.user?.email ?? '-'}</Text>
             <StatusBadge status={test.status} />
             <HelpBadge isAskedForHelp={test.isAskedForHelp ?? false} />
             <Text>Время: {formatted.format(new Date(test.createdAt))}</Text>
