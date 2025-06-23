@@ -313,7 +313,7 @@
       "cancelBtn": "Отменить оплату",
       "payBtn": "Оплатить",
       "price": "Цена",
-      "testPrice": "4 000 ₽",
+      "testPrice": "4 500 ₽",
       "paymentLabel": "Выберите способ оплаты",
       "payments": {
         "ruCard": "Российская карта",
