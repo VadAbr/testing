@@ -6,6 +6,8 @@ import { Button } from '@consta/uikit/Button'
 import { Card } from '@consta/uikit/Card'
 import { Loader } from '@consta/uikit/Loader'
 import { cnMixFlex } from '@consta/uikit/MixFlex'
+import type { SelectItemDefault } from '@consta/uikit/Select'
+import { Select } from '@consta/uikit/Select'
 import { Text } from '@consta/uikit/Text'
 
 import { ShopApi } from '@entities/payment'
@@ -13,6 +15,11 @@ import { TestApi } from '@entities/test'
 import { useUserInfo } from '@shared/store'
 
 import styles from './styles.css'
+
+const PAYMENTS: SelectItemDefault[] = [
+  { id: 'ruCard', label: 'ruCard' },
+  { id: 'crypto', label: 'crypto' },
+]
 
 type Props = {
   onSuccess: () => void
@@ -22,6 +29,9 @@ export const PaymentForm = ({ onSuccess }: Props) => {
   const [isLoading, setIsLoading] = React.useState(false)
   const [isChecking, setIsChecking] = React.useState(false)
   const [isCancelFired, setSsCancelFired] = React.useState(false)
+  const [selectedPayment, setSelectedPayment] = React.useState<SelectItemDefault | null>(
+    PAYMENTS[0],
+  )
 
   const [createInvoice, { data }] = ShopApi.useCreateInvoiceMutation()
   const [cancelInvoice, { isLoading: isCanceling }] = ShopApi.useCancelInvoiceMutation()
@@ -142,9 +152,24 @@ export const PaymentForm = ({ onSuccess }: Props) => {
       <Text align="center" weight="semibold" size="2xl">
         {t('payment.title')}
       </Text>
-      <Text align="center" size="l">
-        {t('payment.description')}
-      </Text>
+
+      <Select
+        disabled={isChecking}
+        label={t('payment.paymentLabel')}
+        getItemLabel={item => t(`payment.payments.${item.label}`)}
+        value={selectedPayment}
+        items={PAYMENTS}
+        onChange={setSelectedPayment}
+      />
+
+      <div className={styles.price}>
+        <Text weight="semibold" align="center" size="2xl">
+          {t('payment.price')}
+        </Text>
+        <Text weight="medium" view="link" align="center" size="2xl">
+          {t('payment.testPrice')}
+        </Text>
+      </div>
 
       {isAdmin && (
         <div
@@ -152,6 +177,10 @@ export const PaymentForm = ({ onSuccess }: Props) => {
           <Button label="Пройти тестирование без оплаты" loading={isLoading} onClick={createTest} />
         </div>
       )}
+
+      <Text align="center" size="m">
+        {t('payment.description')}
+      </Text>
 
       {currentPayment && !isChecking && !isError && !isCancelFired ? (
         <>

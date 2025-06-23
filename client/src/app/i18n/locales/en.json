@@ -311,7 +311,14 @@
       "description": "After clicking the payment button, you will be redirected to the corresponding page. Return to this tab after successful payment",
       "oldPayment": "A pending payment was found. You can complete it or cancel and start over",
       "cancelBtn": "Cancel payment",
-      "payBtn": "Pay"
+      "payBtn": "Pay",
+      "price": "Price",
+      "testPrice": "45 €",
+      "paymentLabel": "Choose a payment method",
+      "payments": {
+        "ruCard": "Russian card",
+        "crypto": "Cryptocurrency"
+      }
     }
   }
 }
