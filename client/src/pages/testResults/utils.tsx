@@ -13,11 +13,15 @@ import { useAppDispatch } from '@shared/hooks'
 import { RegistrationFormSlice } from '@widgets/registrationForm'
 import { TestSlice } from '@widgets/test'
 
-type Props = {
+type AgainButtonProps = {
   isAllBad?: boolean
 }
 
-export const AgainButton = ({ isAllBad }: Props) => {
+type DemoButtonProps = {
+  onClick?: () => void
+}
+
+export const AgainButton = ({ isAllBad }: AgainButtonProps) => {
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
@@ -54,6 +58,16 @@ export const AgainButton = ({ isAllBad }: Props) => {
           onClick={ask}
         />
       )}
+    </div>
+  )
+}
+
+export const DemoButton = ({ onClick }: DemoButtonProps) => {
+  const { t } = useTranslation()
+
+  return (
+    <div className={cnMixFlex({ align: 'center', gap: 'm' })}>
+      <Button size="l" iconLeft={IconRestart} label={t('testResults.again')} onClick={onClick} />
     </div>
   )
 }

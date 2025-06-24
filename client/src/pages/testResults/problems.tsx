@@ -11,11 +11,15 @@ import { Text } from '@consta/uikit/Text'
 import { TestSlice } from '@widgets/test'
 
 import { AllBad } from './allBad'
-import { AgainButton } from './utils'
+import { AgainButton, DemoButton } from './utils'
 
 import styles from './styles.css'
 
-export const Problems = () => {
+type ProblemsProps = {
+  demoAction?: () => void
+}
+
+export const Problems = ({ demoAction }: ProblemsProps) => {
   const { isAllBad } = useSelector(TestSlice.selectors.testResultsDetails)
   const testResults = useSelector(TestSlice.selectors.testResults)
   const { t } = useTranslation()
@@ -24,7 +28,7 @@ export const Problems = () => {
     el[1].categories.some(category => !category.isValid),
   )
 
-  if (isAllBad) {
+  if (isAllBad && !demoAction) {
     return <AllBad />
   }
 
@@ -43,7 +47,7 @@ export const Problems = () => {
         })}
       </div>
 
-      <AgainButton />
+      {demoAction ? <DemoButton onClick={demoAction} /> : <AgainButton />}
     </div>
   )
 }

@@ -3,11 +3,15 @@ import { useTranslation } from 'react-i18next'
 import { IconSmileStroked } from '@consta/icons/IconSmileStroked'
 import { Text } from '@consta/uikit/Text'
 
-import { AgainButton } from './utils'
+import { AgainButton, DemoButton } from './utils'
 
 import styles from './styles.css'
 
-export const AllCool = () => {
+type Props = {
+  demoAction?: () => void
+}
+
+export const AllCool = ({ demoAction }: Props) => {
   const { t } = useTranslation()
 
   return (
@@ -17,7 +21,7 @@ export const AllCool = () => {
         {t('testResults.allCoolText')}
       </Text>
 
-      <AgainButton />
+      {demoAction ? <DemoButton onClick={demoAction} /> : <AgainButton />}
     </div>
   )
 }

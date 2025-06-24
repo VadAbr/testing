@@ -3,11 +3,15 @@ import { useTranslation } from 'react-i18next'
 import { IconWarning } from '@consta/icons/IconWarning'
 import { Text } from '@consta/uikit/Text'
 
-import { AgainButton } from './utils'
+import { AgainButton, DemoButton } from './utils'
 
 import styles from './styles.css'
 
-export const AllBad = () => {
+type Props = {
+  demoAction?: () => void
+}
+
+export const AllBad = ({ demoAction }: Props) => {
   const { t } = useTranslation()
 
   return (
@@ -16,7 +20,7 @@ export const AllBad = () => {
       <Text size="l">{t('testResults.allBadText')}</Text>
       <Text size="l">{t('testResults.allBadSubText')}</Text>
 
-      <AgainButton isAllBad={true} />
+      {demoAction ? <DemoButton onClick={demoAction} /> : <AgainButton isAllBad={true} />}
     </div>
   )
 }

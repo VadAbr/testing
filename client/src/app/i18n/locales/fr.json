@@ -6,7 +6,9 @@
       "mainPageLabel": "Accueil",
       "testPageLabel": "Test",
       "videosPageLabel": "Vidéos",
-      "infoPageLabel": "Description"
+      "infoPageLabel": "Description",
+      "demoPageLabel": "Démo"
+
     },
     "404PageContent": {
       "title": "Page non trouvée",
@@ -311,6 +313,12 @@
       "oldPayment": "Un paiement en attente a été trouvé. Vous pouvez le compléter ou l'annuler et recommencer",
       "cancelBtn": "Annuler le paiement",
       "payBtn": "Payer"
+    },
+    "demo": {
+      "resultTitle": "Sélectionnez le résultat du test",
+      "allCoolBtn": "Tout va bien",
+      "allBadBtn": "Tout est mauvais",
+      "someThingBadBtn": "Quelque chose ne va pas"
     }
   }
 }

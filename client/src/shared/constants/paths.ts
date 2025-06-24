@@ -5,5 +5,6 @@ export const PATHS = {
   videos: '/videos',
   info: '/info',
   adminPanel: '/adminPanel',
+  demo: '/demo',
   testResult: '/testResult',
 } as const

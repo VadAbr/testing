@@ -2,6 +2,7 @@ import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 
 import { AdminPanel } from '@pages/adminPanel'
+import { Demo } from '@pages/demo'
 import { InfoPage } from '@pages/info'
 import { MainPage } from '@pages/main'
 import { NotFoundPage } from '@pages/notFound'
@@ -43,6 +44,10 @@ export const routes: TRouteObjectWithMeta[] = [
       {
         path: PATHS.adminPanel,
         element: <AdminPanel />,
+      },
+      {
+        path: PATHS.demo,
+        element: <Demo />,
       },
     ],
   },

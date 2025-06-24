@@ -7,6 +7,7 @@
       "testPageLabel": "Тестирование",
       "videosPageLabel": "Видео",
       "infoPageLabel": "Описание",
+      "demoPageLabel": "Демо",
       "adminPanel": "Панель админа"
     },
     "404PageContent": {
@@ -319,6 +320,12 @@
         "ruCard": "Российская карта",
         "crypto": "Криптовалюта"
       }
+    },
+    "demo": {
+      "resultTitle": "Выберите результат теста",
+      "allCoolBtn": "Все хорошо",
+      "allBadBtn": "Все плохо",
+      "someThingBadBtn": "Что-то не так"
     }
   }
 }

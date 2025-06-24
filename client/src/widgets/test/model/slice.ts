@@ -9,10 +9,17 @@ import { shuffleArray } from '../libs'
 
 import type { CategoryResult, InitialState, QuestionItem } from './types'
 
+const DEMO_QUESTIONS = [
+  ...Questions_STEP_1.slice(0, 5),
+  ...Questions_STEP_2.slice(0, 5),
+  ...Questions_STEP_3.slice(0, 5),
+]
+
+const ALL_QUESTIONS = [...Questions_STEP_1, ...Questions_STEP_2, ...Questions_STEP_3]
+
 const initialState: InitialState = {
   activeStep: STEPS[0],
-  //TODO: вернуть рандом
-  questions: [...Questions_STEP_1, ...Questions_STEP_2, ...Questions_STEP_3],
+  questions: [],
   testResults: null,
   currentTestId: '',
 }
@@ -50,6 +57,16 @@ export const TestSlice = createSlice({
     setResults: (state, action: PayloadAction<InitialState['testResults']>) => {
       state.testResults = action.payload
     },
+    setDemoQuestions: state => {
+      state.questions = shuffleArray(DEMO_QUESTIONS)
+    },
+    setQuestions: (state, action: PayloadAction<boolean>) => {
+      if (action.payload) {
+        state.questions = ALL_QUESTIONS
+        return
+      }
+      state.questions = shuffleArray(ALL_QUESTIONS)
+    },
     changeQuestion: (state, action: PayloadAction<QuestionItem>) => {
       const question = state.questions.find(el => el.id === action.payload.id)
 
@@ -64,7 +81,6 @@ export const TestSlice = createSlice({
     },
     resetTest: state => {
       state.testResults = initialState.testResults
-      //TODO: вернуть рандом
       state.questions = initialState.questions
     },
   },

@@ -6,7 +6,8 @@
       "mainPageLabel": "Startseite",
       "testPageLabel": "Test",
       "videosPageLabel": "Videos",
-      "infoPageLabel": "Beschreibung"
+      "infoPageLabel": "Beschreibung",
+      "demoPageLabel": "Demo"
     },
     "404PageContent": {
       "title": "Seite nicht gefunden",
@@ -311,6 +312,12 @@
       "oldPayment": "Eine ausstehende Zahlung wurde gefunden. Sie können sie abschließen oder abbrechen und von vorne beginnen",
       "cancelBtn": "Zahlung abbrechen",
       "payBtn": "Bezahlen"
+    },
+    "demo": {
+      "resultTitle": "Wählen Sie das Testergebnis aus",
+      "allCoolBtn": "Alles ist in Ordnung",
+      "allBadBtn": "Alles ist schlecht",
+      "someThingBadBtn": "Etwas stimmt nicht"
     }
   }
 }

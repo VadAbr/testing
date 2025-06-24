@@ -39,6 +39,7 @@ type TabItem = {
 const ITEMS: TabItem[] = [
   { path: PATHS.root, label: 'mainPageLabel' },
   { path: PATHS.info, label: 'infoPageLabel' },
+  { path: PATHS.demo, label: 'demoPageLabel' },
   { path: PATHS.test, label: 'testPageLabel' },
 ]
 

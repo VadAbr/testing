@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { IconAllDone } from '@consta/icons/IconAllDone'
+import { IconInfo } from '@consta/icons/IconInfo'
+import { IconWarning } from '@consta/icons/IconWarning'
 import { Button } from '@consta/uikit/Button'
 import { cnMixFlex } from '@consta/uikit/MixFlex'
 import { cnMixScrollBar } from '@consta/uikit/MixScrollBar'
+import { Text } from '@consta/uikit/Text'
 import cn from 'classnames'
 
 import { PATHS } from '@shared/constants'
 import { useAppDispatch } from '@shared/hooks'
+import { useUserInfo } from '@shared/store'
 
 import { calculateTestResult } from '../actions'
 import type { Props, QuestionItem } from '../model'
@@ -29,12 +33,29 @@ const QUESTION_COMPONENTS: Record<QuestionItem['type'], (args: Props) => React.R
   select: SelectQuestion,
 }
 
-export const Test = () => {
+type TestProps = {
+  mode?: 'demo'
+  onFinishDemo?: (resultMode: 'allCool' | 'allBad' | 'someThingBad') => void
+}
+
+export const Test = ({ mode, onFinishDemo }: TestProps) => {
   const [isLoading, setIsLoading] = React.useState(false)
   const questions = useSelector(TestSlice.selectors.getQuestions)
+
   const { t } = useTranslation()
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
+  const { isAdmin } = useUserInfo()
+
+  const isDemo = mode === 'demo'
+
+  useEffect(() => {
+    if (isDemo) {
+      dispatch(TestSlice.actions.setDemoQuestions())
+    } else {
+      dispatch(TestSlice.actions.setQuestions(isAdmin))
+    }
+  }, [isDemo, dispatch, isAdmin])
 
   const finish = () => {
     setIsLoading(true)
@@ -53,17 +74,60 @@ export const Test = () => {
     <div className={styles.container}>
       <div className={cn(styles.questions, scrollBarStyles)}>
         {questions.map(renderQuestion)}
-        <div className={buttonWrapper}>
-          <Button
-            loading={isLoading}
-            label={t('test.submit')}
-            view="primary"
-            form="round"
-            size="m"
-            iconRight={IconAllDone}
-            onClick={finish}
-          />
-        </div>
+
+        {!isDemo && (
+          <div className={buttonWrapper}>
+            <Button
+              loading={isLoading}
+              label={t('test.submit')}
+              view="primary"
+              form="round"
+              size="m"
+              iconRight={IconAllDone}
+              onClick={finish}
+            />
+          </div>
+        )}
+
+        {isDemo && (
+          <div className={cnMixFlex({ direction: 'column', align: 'center', gap: 's' })}>
+            <Text align="center" weight="medium" size="l">
+              {t('demo.resultTitle')}
+            </Text>
+
+            <div className={cnMixFlex({ align: 'center', gap: 's', justify: 'center' })}>
+              <Button
+                label={t('demo.allBadBtn')}
+                view="primary"
+                form="round"
+                size="m"
+                iconRight={IconWarning}
+                onClick={() => onFinishDemo?.('allBad')}
+              />
+
+              <Button
+                label={t('demo.someThingBadBtn')}
+                view="primary"
+                form="round"
+                size="m"
+                iconRight={IconInfo}
+                onClick={() => {
+                  dispatch(calculateTestResult(isDemo))
+                  onFinishDemo?.('someThingBad')
+                }}
+              />
+
+              <Button
+                label={t('demo.allCoolBtn')}
+                view="primary"
+                form="round"
+                size="m"
+                iconRight={IconAllDone}
+                onClick={() => onFinishDemo?.('allCool')}
+              />
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )
