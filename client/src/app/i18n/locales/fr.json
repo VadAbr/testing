@@ -312,7 +312,8 @@
       "description": "Après avoir cliqué sur le bouton de paiement, vous serez redirigé vers la page correspondante. Revenez sur cet onglet après un paiement réussi",
       "oldPayment": "Un paiement en attente a été trouvé. Vous pouvez le compléter ou l'annuler et recommencer",
       "cancelBtn": "Annuler le paiement",
-      "payBtn": "Payer"
+      "payBtn": "Payer",
+      "text": "Après un paiement réussi, vous aurez accès au test"
     },
     "demo": {
       "resultTitle": "Sélectionnez le résultat du test",

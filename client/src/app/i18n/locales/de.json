@@ -311,7 +311,8 @@
       "description": "Nach dem Klicken auf die Zahlungsschaltfläche werden Sie zur entsprechenden Seite weitergeleitet. Kehren Sie nach erfolgreicher Zahlung zu diesem Tab zurück",
       "oldPayment": "Eine ausstehende Zahlung wurde gefunden. Sie können sie abschließen oder abbrechen und von vorne beginnen",
       "cancelBtn": "Zahlung abbrechen",
-      "payBtn": "Bezahlen"
+      "payBtn": "Bezahlen",
+      "text": "Nach erfolgreicher Zahlung haben Sie Zugang zum Bestehen des Tests"
     },
     "demo": {
       "resultTitle": "Wählen Sie das Testergebnis aus",

@@ -9,11 +9,7 @@ import { shuffleArray } from '../libs'
 
 import type { CategoryResult, InitialState, QuestionItem } from './types'
 
-const DEMO_QUESTIONS = [
-  ...Questions_STEP_1.slice(0, 5),
-  ...Questions_STEP_2.slice(0, 5),
-  ...Questions_STEP_3.slice(0, 5),
-]
+const DEMO_QUESTIONS = [...Questions_STEP_1.slice(0, 15)]
 
 const ALL_QUESTIONS = [...Questions_STEP_1, ...Questions_STEP_2, ...Questions_STEP_3]
 

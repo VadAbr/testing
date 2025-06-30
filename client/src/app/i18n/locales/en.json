@@ -316,6 +316,7 @@
       "price": "Price",
       "testPrice": "45 €",
       "paymentLabel": "Choose a payment method",
+      "text": "After successful payment, you will have access to take the test",
       "payments": {
         "ruCard": "Russian card",
         "crypto": "Cryptocurrency"
@@ -326,6 +327,10 @@
       "allCoolBtn": "Everything is fine",
       "allBadBtn": "Everything is bad",
       "someThingBadBtn": "Something is wrong"
+    },
+    "footer": {
+      "contacts": "Contacts",
+      "serviceAgreement": "Service agreement"
     }
   }
 }

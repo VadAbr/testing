@@ -311,7 +311,8 @@
       "description": "Dopo aver cliccato sul pulsante di pagamento, verrai reindirizzato alla pagina corrispondente. Torna a questa scheda dopo il pagamento riuscito",
       "oldPayment": "È stato trovato un pagamento in sospeso. Puoi completarlo oppure annullarlo e ricominciare",
       "cancelBtn": "Annulla pagamento",
-      "payBtn": "Paga"
+      "payBtn": "Paga",
+      "text": "Dopo aver pagato con successo, avrai accesso per superare il test"
     },
     "demo": {
       "resultTitle": "Seleziona il risultato del test",

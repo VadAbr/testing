@@ -7,4 +7,5 @@ export const PATHS = {
   adminPanel: '/adminPanel',
   demo: '/demo',
   testResult: '/testResult',
+  contacts: '/contacts',
 } as const

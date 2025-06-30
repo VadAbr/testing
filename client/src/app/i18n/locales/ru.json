@@ -316,16 +316,21 @@
       "price": "Цена",
       "testPrice": "4 500 ₽",
       "paymentLabel": "Выберите способ оплаты",
+      "text": "После успешной оплаты Вам откроется доступ для прохождения теста",
       "payments": {
         "ruCard": "Российская карта",
         "crypto": "Криптовалюта"
       }
     },
     "demo": {
-      "resultTitle": "Выберите результат теста",
-      "allCoolBtn": "Все хорошо",
-      "allBadBtn": "Все плохо",
+      "resultTitle": "Выберите результат",
+      "allCoolBtn": "Сбой не обнаружен",
+      "allBadBtn": "Тотальный сбой",
       "someThingBadBtn": "Что-то не так"
+    },
+    "footer": {
+      "contacts": "Контакты",
+      "serviceAgreement": "Договор оферты"
     }
   }
 }

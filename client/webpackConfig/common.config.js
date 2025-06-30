@@ -166,7 +166,7 @@ module.exports = {
         ],
       },
       // --- Images/fonts/svg
-      { test: /\.(?:ico|gif|png|jpg|jpeg|xlsx|xlsm)$/i, type: 'asset/resource' },
+      { test: /\.(?:ico|gif|png|jpg|jpeg|xlsx|xlsm|pdf)$/i, type: 'asset/resource' },
       { test: /\.(woff(2)?|eot|ttf|otf|svg|)$/, type: 'asset/inline' },
     ],
   },

@@ -149,8 +149,12 @@ export const PaymentForm = ({ onSuccess }: Props) => {
 
   return (
     <Card className={styles.container} form="round">
-      <Text align="center" weight="semibold" size="2xl">
+      <Text align="center" weight="semibold" size="2xl" style={{ marginBottom: '1rem' }}>
         {t('payment.title')}
+      </Text>
+
+      <Text align="center" weight="medium" size="l" style={{ marginBottom: '2rem' }}>
+        {t('payment.text')}
       </Text>
 
       <Select
@@ -219,6 +223,7 @@ export const PaymentForm = ({ onSuccess }: Props) => {
           )}
           {!isChecking && (
             <Button
+              disabled={true}
               iconLeft={IconNodeStart}
               label={t('payment.payBtn')}
               loading={isLoading}

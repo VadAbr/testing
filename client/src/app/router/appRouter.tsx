@@ -2,6 +2,7 @@ import React from 'react'
 import { createBrowserRouter } from 'react-router-dom'
 
 import { AdminPanel } from '@pages/adminPanel'
+import { ContactsPage } from '@pages/contacts'
 import { Demo } from '@pages/demo'
 import { InfoPage } from '@pages/info'
 import { MainPage } from '@pages/main'
@@ -48,6 +49,10 @@ export const routes: TRouteObjectWithMeta[] = [
       {
         path: PATHS.demo,
         element: <Demo />,
+      },
+      {
+        path: PATHS.contacts,
+        element: <ContactsPage />,
       },
     ],
   },
