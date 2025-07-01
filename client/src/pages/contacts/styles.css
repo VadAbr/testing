@@ -4,3 +4,10 @@
     padding: 2.5rem;
     background-color: white;
 }
+
+@media (width <= 750px) {
+    .container {
+        height: 100%;
+    }
+}
+
