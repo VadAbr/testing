@@ -1,15 +1,15 @@
 import { apiSlice, axiosInstance } from '@shared/api'
 
 import { ApiPath } from './apiPath'
-import type { CheckResponse, CreateResponse } from './types'
+import type { CancelResponse, CheckResponse, CreatePaymentRequest, CreateResponse } from './types'
 
 export const ShopApi = apiSlice.injectEndpoints({
   endpoints: build => ({
-    createInvoice: build.mutation<CreateResponse, void>({
-      queryFn: async () => {
+    createInvoice: build.mutation<CreateResponse, CreatePaymentRequest>({
+      queryFn: async request => {
         try {
           const data = await axiosInstance
-            .post<CreateResponse>(ApiPath.createInvoice)
+            .post<CreateResponse>(ApiPath.createInvoice, request)
             .then(res => res.data)
 
           return {
@@ -41,17 +41,17 @@ export const ShopApi = apiSlice.injectEndpoints({
         }
       },
     }),
-    cancelInvoice: build.mutation<boolean, string>({
+    cancelInvoice: build.mutation<CancelResponse, string>({
       queryFn: async invoiceId => {
         try {
           const data = await axiosInstance
-            .post<unknown>(ApiPath.cancelInvoice, {
+            .post<CancelResponse>(ApiPath.cancelInvoice, {
               invoiceId,
             })
             .then(res => res.data)
 
           return {
-            data: Boolean(data),
+            data,
           }
         } catch (error) {
           return {

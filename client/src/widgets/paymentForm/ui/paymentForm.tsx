@@ -10,6 +10,7 @@ import type { SelectItemDefault } from '@consta/uikit/Select'
 import { Select } from '@consta/uikit/Select'
 import { Text } from '@consta/uikit/Text'
 
+import type { PaymentMethod } from '@entities/payment'
 import { ShopApi } from '@entities/payment'
 import { TestApi } from '@entities/test'
 import { useUserInfo } from '@shared/store'
@@ -17,7 +18,7 @@ import { useUserInfo } from '@shared/store'
 import styles from './styles.css'
 
 const PAYMENTS: SelectItemDefault[] = [
-  { id: 'ruCard', label: 'ruCard' },
+  { id: 'yukassa', label: 'ruCard' },
   { id: 'crypto', label: 'crypto' },
 ]
 
@@ -58,6 +59,15 @@ export const PaymentForm = ({ onSuccess }: Props) => {
     }
   }, [])
 
+  useEffect(() => {
+    if (currentPayment?.paymentMethod) {
+      const paymentOption = PAYMENTS.find(payment => payment.id === currentPayment.paymentMethod)
+      if (paymentOption) {
+        setSelectedPayment(paymentOption)
+      }
+    }
+  }, [currentPayment])
+
   const continuePayment = () => {
     if (currentPayment) {
       startChecking(currentPayment.id)
@@ -93,10 +103,15 @@ export const PaymentForm = ({ onSuccess }: Props) => {
   }
 
   const pay = async () => {
+    if (!selectedPayment) return
+
     setIsLoading(true)
 
     try {
-      const data = await createInvoice().unwrap()
+      const data = await createInvoice({
+        paymentMethod: selectedPayment.id as PaymentMethod,
+        returnUrl: window.location.href,
+      }).unwrap()
 
       startChecking(data.id)
       window.open(data.link)
@@ -223,7 +238,7 @@ export const PaymentForm = ({ onSuccess }: Props) => {
           )}
           {!isChecking && (
             <Button
-              disabled={true}
+              disabled={!selectedPayment}
               iconLeft={IconNodeStart}
               label={t('payment.payBtn')}
               loading={isLoading}
