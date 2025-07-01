@@ -35,7 +35,7 @@ export const LoginOrRegistrModal = () => {
 
   return (
     <Modal className={styles.container} isOpen={isOpen} onClickOutside={onClose}>
-      <div>
+      <div className={styles.registerBtn}>
         <Button
           iconLeft={IconRevert}
           view="clear"

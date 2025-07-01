@@ -13,6 +13,8 @@ import { useAppDispatch } from '@shared/hooks'
 import { RegistrationFormSlice } from '@widgets/registrationForm'
 import { TestSlice } from '@widgets/test'
 
+import styles from './styles.css'
+
 type AgainButtonProps = {
   isAllBad?: boolean
 }
@@ -40,7 +42,7 @@ export const AgainButton = ({ isAllBad }: AgainButtonProps) => {
   }
 
   return (
-    <div className={cnMixFlex({ align: 'center', gap: 'm' })}>
+    <div className={cnMixFlex({ align: 'center', gap: 'm' }, [styles.btns])}>
       <Button
         size="l"
         iconLeft={IconRestart}

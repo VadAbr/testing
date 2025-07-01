@@ -18,3 +18,14 @@
   height: 100%;
   padding: 2rem 0;
 }
+
+
+@media (width <= 740px) {
+  .wrapper {
+    height: 100%;
+  }
+
+  .testWrapper > div {
+    padding: 0;
+  }
+}

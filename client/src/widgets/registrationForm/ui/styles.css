@@ -25,11 +25,22 @@
 }
 
 @media screen and (width <= 900px) {
+  .container {
+    width: 90%;
+  }
+
+  .registerBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+
   .row {
     flex-direction: column;
   }
 
-  .footer {
-    flex-direction: row;
+  .footer > label {
+    align-self: flex-start;
   }
 }

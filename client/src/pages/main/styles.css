@@ -42,7 +42,30 @@
 
 .btns {
   display: flex;
+  flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
+
   margin-top: 2.5rem;
+}
+
+
+@media (width <= 740px) {
+  .page {
+    padding: 2.5rem 0;
+  }
+
+  .btns >* {
+    width: 100%;
+  }
+
+  .info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .title {
+    margin-bottom: 2rem;
+    font-size: 5rem;
+  }
 }

@@ -95,7 +95,10 @@ export const Test = ({ mode, onFinishDemo }: TestProps) => {
               {t('demo.resultTitle')}
             </Text>
 
-            <div className={cnMixFlex({ align: 'center', gap: 's', justify: 'center' })}>
+            <div
+              className={cnMixFlex({ align: 'center', gap: 's', justify: 'center' }, [
+                styles.demoBtns,
+              ])}>
               <Button
                 label={t('demo.allBadBtn')}
                 view="primary"

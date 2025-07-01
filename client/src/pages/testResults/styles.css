@@ -87,3 +87,31 @@
     margin-top: 1rem;
   }
 }
+
+@media (width <= 740px) {
+  .cool > * {
+    font-size: 1.6rem;
+  }
+  .card {
+    padding: 2rem;
+  }
+
+  .container {
+    height: 100%;
+  }
+
+  .btns {
+    flex-direction: column;
+  }
+
+  .btns > * {
+    width: 100%;
+  }
+}
+
+@media (width <= 500px) {
+  .container > div {
+    padding: 0;
+  }
+}
+

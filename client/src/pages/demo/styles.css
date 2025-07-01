@@ -11,3 +11,21 @@
   justify-content: center;
   height: 100%;
 }
+
+@media (width <= 740px) {
+  .container {
+    height: 100%;
+  }
+
+  .container > div {
+    padding: 1rem;
+  }
+
+  .card {
+    padding: 5rem 1rem;
+  }
+
+  .card > * > *:global(.Text) {
+    font-size: 1.6rem;
+  }
+}

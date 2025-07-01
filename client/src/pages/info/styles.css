@@ -13,7 +13,7 @@
 }
 
 .arrow {
-  margin: 2.5rem 0 1rem 0;
+  margin: 2.5rem 0 1rem;
 
   & span {
     flex-shrink: 0;
@@ -77,6 +77,24 @@
     margin-bottom: 0;
   }
 }
+
+@media (width <= 1100px) {
+  .container {
+    height: auto;
+  }
+}
+
+@media (width <= 640px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .container > div {
+    padding: 0 1.5rem;
+  }
+}
+
+
 
 @keyframes bounce {
   0%,

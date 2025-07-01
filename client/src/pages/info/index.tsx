@@ -34,7 +34,7 @@ export const InfoPage = () => {
           <div className={styles.problem}>
             <IconTeam size="l" view="link" />
             <div>
-              <Text size="xl" weight="semibold">
+              <Text size="xl" weight="semibold" align="left">
                 {t('infoPageContent.problem1')}
               </Text>
               <Text>{t('infoPageContent.problemText1')}</Text>
@@ -44,7 +44,7 @@ export const InfoPage = () => {
           <div className={styles.problem}>
             <IconLineAndBarChart size="l" view="link" />
             <div>
-              <Text size="xl" weight="semibold">
+              <Text size="xl" weight="semibold" align="left">
                 {t('infoPageContent.problem2')}
               </Text>
               <Text>{t('infoPageContent.problemText2')}</Text>
@@ -54,7 +54,7 @@ export const InfoPage = () => {
           <div className={styles.problem}>
             <IconCommentDeleteFilled size="l" view="link" />
             <div>
-              <Text size="xl" weight="semibold">
+              <Text size="xl" weight="semibold" align="left">
                 {t('infoPageContent.problem3')}
               </Text>
               <Text>{t('infoPageContent.problemText3')}</Text>
@@ -64,7 +64,7 @@ export const InfoPage = () => {
           <div className={styles.problem}>
             <IconTarget size="l" view="link" />
             <div>
-              <Text size="xl" weight="semibold">
+              <Text size="xl" weight="semibold" align="left">
                 {t('infoPageContent.problem4')}
               </Text>
               <Text>{t('infoPageContent.problemText4')}</Text>

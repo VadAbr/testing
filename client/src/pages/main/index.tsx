@@ -27,7 +27,7 @@ export const MainPage = () => {
   return (
     <PageContent className={styles.container}>
       <div className={styles.page}>
-        <Text size="5xl" weight="semibold">
+        <Text size="5xl" weight="semibold" className={styles.title}>
           {t('mainPageContent.text1')}
         </Text>
 

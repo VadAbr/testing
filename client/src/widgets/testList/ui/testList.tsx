@@ -15,6 +15,8 @@ import type { GetAllTestsResponse } from '@entities/test'
 import { TestItem } from './testItem'
 import { TestModal } from './testModal'
 
+import styles from './styles.css'
+
 type Props = {
   tests: GetAllTestsResponse
 }
@@ -83,8 +85,6 @@ export const TestList = ({ tests }: Props) => {
   const toggleSort = () => {
     setSortOrder(prev => (prev === 'asc' ? 'desc' : 'asc'))
   }
-  console.log(tests)
-  console.log(filteredTests)
 
   if (tests.length === 0) {
     return (
@@ -101,7 +101,7 @@ export const TestList = ({ tests }: Props) => {
           Фильтры
         </Text>
 
-        <div className={cnMixFlex({ align: 'flex-end', gap: '2xl' })}>
+        <div className={cnMixFlex({ align: 'flex-end', gap: '2xl' }, [styles.filters])}>
           <TextField
             label="Пользователь"
             value={filterUser}

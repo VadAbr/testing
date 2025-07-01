@@ -24,7 +24,7 @@ export const Demo = () => {
 
   if (result) {
     return (
-      <PageContent>
+      <PageContent className={styles.container}>
         <div className={styles.content}>
           <Card className={styles.card} horizontalSpace="4xl" verticalSpace="4xl" form="round">
             {result === 'allCool' && <AllCool mode="demo" demoAction={resetResult} />}
@@ -37,7 +37,7 @@ export const Demo = () => {
   }
 
   return (
-    <PageContent>
+    <PageContent className={styles.container}>
       <div className={styles.testContainer}>
         <Test mode="demo" onFinishDemo={setResult} />
       </div>

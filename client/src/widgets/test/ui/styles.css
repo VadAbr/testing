@@ -16,3 +16,18 @@
 .questions > *:not(:last-child) {
   margin-bottom: var(--space-m);
 }
+
+
+@media (width <= 740px) {
+  .questions {
+    flex: auto;
+  }
+  
+  .demoBtns {
+    flex-wrap: wrap;
+  }
+
+  .demoBtns > * {
+    width: 100%;
+  }
+}

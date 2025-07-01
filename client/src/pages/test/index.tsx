@@ -73,7 +73,7 @@ export const TestPage = () => {
   }
 
   return (
-    <PageContent>
+    <PageContent className={styles.testWrapper}>
       <div className={styles.testContainer}>
         <Test />
       </div>
