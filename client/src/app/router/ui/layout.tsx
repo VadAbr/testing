@@ -19,7 +19,10 @@ export const Layout = () => {
       <Header />
 
       <Suspense fallback={<Loader className="loaderFullContent" />}>
-        <div className={cnMixScrollBar()} style={{ height: '100%', overflowY: 'auto' }}>
+        <div
+          ref={el => el?.scroll(0, 0)}
+          className={cnMixScrollBar()}
+          style={{ height: '100%', overflowY: 'auto' }}>
           <Outlet />
           {isFooterActive && <Footer />}
         </div>

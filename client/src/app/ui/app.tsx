@@ -17,7 +17,6 @@ import '../styles/global.css'
 
 const AppWithNotifications = withNotifications(<RouterProvider router={appRouter} />)
 
-console.log('ads', process.env.REACT_APP_API_URL)
 export const App = () => (
   <Theme preset={presetGpnDefault}>
     <ReduxProvider store={appStore}>
