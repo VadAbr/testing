@@ -10,8 +10,8 @@ const PROVIDER_CONFIG: Record<PaymentMethod, PaymentProviderConfig> = {
     baseURL: process.env.CRYPTO_PAYMENT_URI || '',
   },
   yukassa: {
-    apiKey: process.env.YOOKASSA_API_TOKEN || '',
-    shopId: process.env.YOOKASSA_SHOP_ID || '',
+    apiKey: process.env.YOOKASSA_API_TOKEN_REAL || '',
+    shopId: process.env.YOOKASSA_SHOP_ID_REAL || '',
     baseURL: process.env.YOOKASSA_PAYMENT_URI || '',
   },
 };
