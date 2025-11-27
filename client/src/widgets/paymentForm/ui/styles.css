@@ -16,3 +16,7 @@
 .price {
   margin: 2rem;
 }
+
+.freePrice {
+    text-decoration: line-through;
+}
