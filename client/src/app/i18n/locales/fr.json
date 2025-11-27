@@ -313,7 +313,8 @@
       "oldPayment": "Un paiement en attente a été trouvé. Vous pouvez le compléter ou l'annuler et recommencer",
       "cancelBtn": "Annuler le paiement",
       "payBtn": "Payer",
-      "text": "Après un paiement réussi, vous aurez accès au test"
+      "text": "Après un paiement réussi, vous aurez accès au test",
+      "freeTry":"Passer les tests sans payer"
     },
     "demo": {
       "resultTitle": "Sélectionnez le résultat du test",

@@ -63,7 +63,7 @@ export const FreeForm = ({ onSuccess }: Props) => {
       </Text>
 
       <div className={cnMixFlex({ align: "center", gap: "m", justify: "center" }, [styles.payBtn])}>
-        <Button label="Пройти тестирование без оплаты" loading={isLoading} onClick={createTest} />
+        <Button label={t("payment.freeTry")} loading={isLoading} onClick={createTest} />
       </div>
     </Card>
   );

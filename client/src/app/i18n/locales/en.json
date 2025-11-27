@@ -317,6 +317,7 @@
       "testPrice": "45 €",
       "paymentLabel": "Choose a payment method",
       "text": "After successful payment, you will have access to take the test",
+      "freeTry": "Take the test without paying",
       "payments": {
         "ruCard": "Russian card",
         "crypto": "Cryptocurrency"

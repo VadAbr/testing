@@ -312,7 +312,8 @@
       "oldPayment": "È stato trovato un pagamento in sospeso. Puoi completarlo oppure annullarlo e ricominciare",
       "cancelBtn": "Annulla pagamento",
       "payBtn": "Paga",
-      "text": "Dopo aver pagato con successo, avrai accesso per superare il test"
+      "text": "Dopo aver pagato con successo, avrai accesso per superare il test",
+      "freeTry": "prova senza pagare"
     },
     "demo": {
       "resultTitle": "Seleziona il risultato del test",

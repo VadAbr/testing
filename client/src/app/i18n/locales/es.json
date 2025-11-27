@@ -312,7 +312,8 @@
       "oldPayment": "Se encontró un pago pendiente. Puede completarlo o cancelarlo y comenzar de nuevo",
       "cancelBtn": "Cancelar pago",
       "payBtn": "Pagar",
-      "text": "Después del pago exitoso, se le abrirá el acceso para pasar la prueba"
+      "text": "Después del pago exitoso, se le abrirá el acceso para pasar la prueba",
+      "freeTry": "Pasar la prueba sin pagar"
     },
     "demo": {
       "resultTitle": "Seleccione el resultado de la prueba",

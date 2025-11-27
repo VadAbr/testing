@@ -312,7 +312,8 @@
       "oldPayment": "Eine ausstehende Zahlung wurde gefunden. Sie können sie abschließen oder abbrechen und von vorne beginnen",
       "cancelBtn": "Zahlung abbrechen",
       "payBtn": "Bezahlen",
-      "text": "Nach erfolgreicher Zahlung haben Sie Zugang zum Bestehen des Tests"
+      "text": "Nach erfolgreicher Zahlung haben Sie Zugang zum Bestehen des Tests",
+      "freeTry": "Ohne Bezahlung getestet werden"
     },
     "demo": {
       "resultTitle": "Wählen Sie das Testergebnis aus",
