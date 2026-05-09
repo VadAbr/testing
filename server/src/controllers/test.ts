@@ -144,7 +144,7 @@ const COLOR_VALID = 'FF16A34A';
 const COLOR_INVALID = 'FFDC2626';
 const COLOR_SUMMARY_BG = 'FFFBBF24';
 
-export const exportTestsToExcel = async (req: Request, res: Response): Promise<void> => {
+export const exportTestsToExcel: RequestHandler = async (_req, res): Promise<void> => {
   try {
     const testsCol = getTestCollection();
     const usersCol = getUserCollection();
@@ -315,21 +315,14 @@ export const exportTestsToExcel = async (req: Request, res: Response): Promise<v
     sheet.views = [{ state: 'frozen', ySplit: 1 }];
 
     const filename = `tests_export_${Date.now()}.xlsx`;
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
+
     res.set('Content-Type', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     res.set('Content-Disposition', `attachment; filename="${filename}"`);
 
     await workbook.xlsx.write(res as any);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     res.end();
   } catch (err) {
     console.error('Export error:', err);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
     res.status(500).json({ message: 'Server error during export' });
   }
 };
