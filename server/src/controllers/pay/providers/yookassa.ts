@@ -23,6 +23,8 @@ interface YooKassaCheckResponse {
   paid: boolean;
 }
 
+const COST = 100; //рублей
+
 export class YooKassaProvider implements PaymentProvider {
   private axiosInstance;
 
@@ -44,7 +46,7 @@ export class YooKassaProvider implements PaymentProvider {
     const response = await this.axiosInstance
       .post<YooKassaCreateResponse>('/payments', {
         amount: {
-          value: '4500.00',
+          value: `${COST}.00`,
           currency: 'RUB',
         },
         confirmation: {

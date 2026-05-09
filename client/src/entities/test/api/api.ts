@@ -98,5 +98,28 @@ export const TestApi = apiSlice.injectEndpoints({
         }
       },
     }),
+
+    exportAllTest: build.mutation<void, void>({
+      queryFn: async () => {
+        try {
+          const response = await axiosInstance.get(ApiPath.exportAllTest, {
+            responseType: 'blob',
+          })
+
+          const url = window.URL.createObjectURL(new Blob([response.data]))
+          const link = document.createElement('a')
+          link.href = url
+          link.setAttribute('download', `tests_export_${Date.now()}.xlsx`)
+          document.body.appendChild(link)
+          link.click()
+          link.remove()
+          window.URL.revokeObjectURL(url)
+
+          return { data: undefined }
+        } catch (error) {
+          return { error }
+        }
+      },
+    }),
   }),
 })

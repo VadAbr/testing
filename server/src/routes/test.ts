@@ -4,6 +4,7 @@ import {
   completeTest,
   currentTest,
   getAllTests,
+  exportTestsToExcel,
   createTest,
 } from '../controllers/test';
 import { authenticate } from '../middlewares/auth';
@@ -16,6 +17,7 @@ router.use(authenticate);
 router.post('/completeTest', completeTest);
 router.get('/currentTest', currentTest);
 router.get('/getAllTests', isAdmin, getAllTests);
+router.get('/exportAllTest', isAdmin, exportTestsToExcel);
 router.post('/askForHelp', askForHelp);
 router.post('/createTest', createTest);
 

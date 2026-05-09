@@ -3,5 +3,6 @@ export const ApiPath = {
   currentTest: '/test/currentTest',
   askForHelp: '/test/askForHelp',
   getAllTests: '/test/getAllTests',
+  exportAllTest: '/test/exportAllTest',
   createTest: '/test/createTest',
 }

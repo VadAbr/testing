@@ -1,5 +1,6 @@
 import React, { useMemo, useState } from 'react'
 import { IconDown } from '@consta/icons/IconDown'
+import { IconDownload } from '@consta/icons/IconDownload'
 import { IconTop } from '@consta/icons/IconTop'
 import { Button } from '@consta/uikit/Button'
 import { cnMixFlex } from '@consta/uikit/MixFlex'
@@ -11,6 +12,7 @@ import { Text } from '@consta/uikit/Text'
 import { TextField } from '@consta/uikit/TextField'
 
 import type { GetAllTestsResponse } from '@entities/test'
+import { TestApi } from '@entities/test'
 
 import { TestItem } from './testItem'
 import { TestModal } from './testModal'
@@ -58,6 +60,8 @@ export const TestList = ({ tests }: Props) => {
   const [filterHelp, setFilterHelp] = useState<SelectItemDefault>(HELP_REQUESTED[0])
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc')
 
+  const [exportAll, { isLoading }] = TestApi.useExportAllTestMutation()
+
   const filteredTests = useMemo(() => {
     const filtered = tests.filter(test => {
       const userFilterValue = (test.user?.name ?? (test.userId || '')).toLowerCase()
@@ -84,6 +88,10 @@ export const TestList = ({ tests }: Props) => {
 
   const toggleSort = () => {
     setSortOrder(prev => (prev === 'asc' ? 'desc' : 'asc'))
+  }
+
+  const exportTests = () => {
+    exportAll()
   }
 
   if (tests.length === 0) {
@@ -131,6 +139,13 @@ export const TestList = ({ tests }: Props) => {
             iconLeft={sortOrder === 'asc' ? IconDown : IconTop}
             label={sortOrder === 'asc' ? 'Старые' : 'Новые'}
             onClick={toggleSort}
+          />
+
+          <Button
+            loading={isLoading}
+            iconLeft={IconDownload}
+            label="Экспорт"
+            onClick={exportTests}
           />
         </div>
 

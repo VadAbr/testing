@@ -314,7 +314,7 @@
       "cancelBtn": "Cancel payment",
       "payBtn": "Pay",
       "price": "Price",
-      "testPrice": "45 €",
+      "testPrice": "1 €",
       "paymentLabel": "Choose a payment method",
       "text": "After successful payment, you will have access to take the test",
       "freeTry": "Take the test without paying",
